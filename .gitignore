@@ -1,0 +1,7 @@
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Imagens originais (fonte) — não publicadas; só as versões otimizadas em assets/img/ e assets/img/frota/
+assets/img/raw/
