@@ -56,6 +56,23 @@
     });
   }
 
+  /* ---------- Mapa Google (carregamento sob pedido — sem cookies por defeito) ---------- */
+  var mapLoad = document.getElementById("map-load");
+  if (mapLoad) {
+    mapLoad.addEventListener("click", function () {
+      var box = document.getElementById("map-embed");
+      if (!box) return;
+      var ifr = document.createElement("iframe");
+      ifr.src = "https://www.google.com/maps?q=Rua%20da%20Gandara%20158%2C%203700-607%20Cesar%2C%20Oliveira%20de%20Azem%C3%A9is&output=embed";
+      ifr.title = "Mapa da localização da HN Transportes (Google Maps)";
+      ifr.loading = "lazy";
+      ifr.allowFullscreen = true;
+      ifr.referrerPolicy = "no-referrer-when-downgrade";
+      box.innerHTML = "";
+      box.appendChild(ifr);
+    });
+  }
+
   /* ---------- Animações de entrada ---------- */
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && reveals.length) {
