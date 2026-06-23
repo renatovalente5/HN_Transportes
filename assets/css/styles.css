@@ -299,7 +299,8 @@ body.nav-open .navtoggle span::after { transform: translateY(-7px) rotate(-45deg
 .footer__social a:hover svg { color: var(--dark); }
 .footer h4 { color: #fff; font-family: var(--font-display); font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 16px; }
 .footer__col ul { display: grid; gap: 10px; }
-.footer__col li svg { width: 15px; color: var(--accent); margin-right: 8px; vertical-align: -2px; }
+.footer__col li { display: flex; align-items: center; gap: 9px; }
+.footer__col li svg { width: 16px; height: 16px; color: var(--accent); flex: none; }
 
 .footer__legal { padding: 26px 0; border-bottom: 1px solid var(--line-dark); }
 .footer__legal p { font-size: .82rem; color: #79808d; line-height: 1.7; }
