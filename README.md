@@ -4,7 +4,7 @@ Sítio institucional da **Hélder Nunes - Transportes, Unipessoal, Lda** (marca 
 empresa de transporte rodoviário de mercadorias em carrinhas de caixa até 3.500 kg —
 serviços expresso, dedicados e diretos, 24h/dia, a nível nacional e ibérico.
 
-🔗 **Site:** https://renatovalente5.github.io/HN_Transportes/
+🔗 **Site:** https://hntransportes.pt/ (alojado no GitHub Pages, domínio personalizado via `CNAME`)
 
 ## Tecnologia
 
