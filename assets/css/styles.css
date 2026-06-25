@@ -348,7 +348,7 @@ a.ccard__val:hover { color: var(--accent-text); }
 .footer__col li svg { width: 16px; height: 16px; color: var(--accent); flex: none; }
 .footer__col .callnote { display: block; font-size: .78rem; color: #8b95a5; font-weight: 500; margin-top: 2px; }
 
-.footer__bottom { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; padding: 18px 0 30px; }
+.footer__bottom { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; padding: 24px 0 36px; }
 .footer__links { display: flex; gap: 6px 16px; flex-wrap: wrap; justify-content: center; align-items: center; }
 .footer__links > *:not(:last-child)::after { content: "|"; margin-left: 16px; color: rgba(255, 255, 255, .22); }
 .footer__bottom a, .footer__bottom .cookie-settings { font-size: .85rem; }
