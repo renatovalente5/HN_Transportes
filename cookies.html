@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Política de Cookies | HN Transportes</title>
-  <meta name="description" content="Política de Cookies do sítio da HN Transportes. Este sítio não utiliza cookies de análise, publicidade ou rastreamento." />
+  <script>
+    (function () {
+      try {
+        var k = "hn-lang", s = null, sup = ["pt", "es", "en"];
+        try { s = localStorage.getItem(k); } catch (e) {}
+        var l = (s && sup.indexOf(s) > -1) ? s : (navigator.language || "pt").slice(0, 2).toLowerCase();
+        if (sup.indexOf(l) < 0) l = "pt";
+        document.documentElement.lang = { pt: "pt-PT", es: "es-ES", en: "en-US" }[l];
+        if (l !== "pt") {
+          var d = document.documentElement;
+          d.className += (d.className ? " " : "") + "i18n-pending";
+          setTimeout(function () { d.classList.remove("i18n-pending"); }, 1200);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title data-i18n="ck.metaTitle">Política de Cookies | HN Transportes</title>
+  <meta name="description" data-i18n-content="ck.metaDesc" content="Política de Cookies da HN Transportes. Por defeito não são instalados cookies; o único cookie não essencial (Google Maps) só é carregado com o seu consentimento." />
   <meta name="robots" content="all" />
   <meta name="theme-color" content="#0f1116" />
   <link rel="canonical" href="https://hntransportes.pt/cookies.html" />
@@ -12,26 +28,36 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png" />
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
 </head>
 <body>
-  <a class="skip" href="#main">Saltar para o conteúdo</a>
+  <a class="skip" href="#main" data-i18n="a11y.skip">Saltar para o conteúdo</a>
 
   <header class="header is-stuck" id="top">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="HN Transportes — início">
+      <a class="brand" href="index.html" aria-label="HN Transportes">
         <img src="assets/img/logo.png" alt="" width="555" height="468" />
         <span class="brand__txt"><strong>HN Transportes</strong><span>Hélder Nunes</span></span>
       </a>
-      <nav class="nav" id="nav" aria-label="Navegação principal">
-        <a href="index.html#servicos">Serviços</a>
-        <a href="index.html#sobre">Sobre</a>
-        <a href="index.html#frota">Frota</a>
-        <a href="index.html#cobertura">Cobertura</a>
-        <a href="index.html#contactos">Contactos</a>
+      <nav class="nav" id="nav" data-i18n-aria="a11y.nav" aria-label="Navegação principal">
+        <a href="index.html#servicos" data-i18n="nav.servicos">Serviços</a>
+        <a href="index.html#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="index.html#frota" data-i18n="nav.frota">Frota</a>
+        <a href="index.html#cobertura" data-i18n="nav.cobertura">Cobertura</a>
+        <a href="index.html#contactos" data-i18n="nav.contactos">Contactos</a>
+        <div class="langswitch langswitch--menu" role="group" data-i18n-aria="a11y.langs" aria-label="Idioma">
+          <button type="button" data-lang="pt">PT</button>
+          <button type="button" data-lang="es">ES</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
       </nav>
       <div class="header__actions">
-        <a class="btn btn--accent" href="index.html#contactos">Pedir orçamento</a>
+        <div class="langswitch" role="group" data-i18n-aria="a11y.langs" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--accent" href="index.html#contactos" data-i18n="cta.quote">Pedir orçamento</a>
         <button class="navtoggle" id="navtoggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span></button>
       </div>
     </div>
@@ -40,45 +66,47 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <p class="crumbs"><a href="index.html">Início</a> · Política de Cookies</p>
-        <h1>Política de Cookies</h1>
-        <p>Informação sobre a utilização de cookies neste sítio, nos termos do artigo 5.º da Lei n.º 41/2004.</p>
+        <p class="crumbs"><a href="index.html" data-i18n="legal.home">Início</a> · <span data-i18n="ck.crumb">Política de Cookies</span></p>
+        <h1 data-i18n="ck.h1">Política de Cookies</h1>
+        <p data-i18n="ck.sub">Informação sobre a utilização de cookies neste sítio, nos termos do artigo 5.º da Lei n.º 41/2004.</p>
       </div>
     </section>
 
     <div class="container">
       <article class="prose">
-        <p class="updated">Última atualização: 23 de junho de 2026</p>
+        <p class="updated" data-i18n="ck.updated">Última atualização: 25 de junho de 2026</p>
+        <p class="legal-note" data-i18n="legal.prevail">Em caso de divergência entre versões, prevalece a versão em português.</p>
 
-        <h2>1. O que são cookies</h2>
-        <p>Os cookies são pequenos ficheiros de texto que um sítio pode guardar no seu dispositivo quando o visita. Servem, por exemplo, para recordar preferências, recolher estatísticas de utilização ou apresentar publicidade direcionada.</p>
+        <h2 data-i18n="ck.s1h">1. O que são cookies</h2>
+        <p data-i18n="ck.s1p">Os cookies são pequenos ficheiros de texto que um sítio pode guardar no seu dispositivo quando o visita. Servem, por exemplo, para recordar preferências, recolher estatísticas de utilização ou apresentar publicidade direcionada.</p>
 
         <div class="callout">
-          <p style="margin:0"><strong>Este sítio não utiliza cookies não essenciais.</strong> Não recorremos a cookies de análise (analytics), de publicidade, de redes sociais ou de qualquer outro tipo de rastreamento. Por defeito não são instalados cookies que exijam o seu consentimento prévio — a única exceção é o mapa do Google Maps, que só é carregado se clicar em «Carregar mapa» (ver ponto 3).</p>
+          <p style="margin:0" data-i18n="ck.callout"><strong>Só utilizamos cookies não essenciais com o seu consentimento.</strong> Por defeito, não é instalado qualquer cookie de terceiros. O único cookie não essencial provém do <strong>Google Maps</strong> e só é carregado se aceitar no banner de cookies. Pode alterar a sua escolha a qualquer momento em «Definições de cookies», no rodapé.</p>
         </div>
 
-        <h2>2. Como conseguimos não utilizar cookies</h2>
-        <p>Construímos este sítio com uma abordagem de privacidade desde a conceção:</p>
-        <ul>
-          <li>Não utilizamos ferramentas de estatísticas como o Google Analytics;</li>
-          <li>Não carregamos automaticamente conteúdos externos; o mapa do Google Maps só é carregado a seu pedido (ver ponto 3);</li>
-          <li>As tipografias (fontes) são alojadas no próprio sítio, sem recurso a serviços externos;</li>
-          <li>Não existe publicidade nem píxeis de rastreamento.</li>
-        </ul>
+        <h2 data-i18n="ck.s2h">2. Que cookies utilizamos</h2>
+        <p data-i18n="ck.s2p">Não usamos cookies de análise (analytics), de publicidade nem de redes sociais. As tipografias são alojadas no próprio sítio e não existem píxeis de rastreamento. O único tratamento que depende de cookies é o mapa de localização:</p>
+        <table data-i18n="ck.s2table">
+          <thead><tr><th>Serviço</th><th>Finalidade</th><th>Quando</th></tr></thead>
+          <tbody>
+            <tr><td>Google Maps (Google)</td><td>Apresentar o mapa interativo da nossa localização</td><td>Apenas após aceitar o banner de cookies</td></tr>
+            <tr><td>Preferência de consentimento</td><td>Recordar a sua escolha (aceitar/rejeitar) para não voltar a perguntar</td><td>Essencial — guardado apenas no seu navegador, não é partilhado</td></tr>
+          </tbody>
+        </table>
 
-        <h2>3. Mapa (Google Maps)</h2>
-        <p>A página de contactos inclui o Google Maps em modo de <strong>carregamento sob pedido</strong> (<em>click-to-load</em>): o mapa só é carregado quando clica no botão «Carregar mapa». Enquanto não o fizer, <strong>nenhum cookie do Google é instalado</strong>. Ao optar por carregar o mapa, o Google poderá instalar cookies e tratar dados (incluindo o seu endereço IP), nos termos da <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidade do Google</a>.</p>
+        <h2 data-i18n="ck.s3h">3. Mapa de localização (Google Maps)</h2>
+        <p data-i18n="ck.s3p">A página de contactos pode apresentar um mapa do <strong>Google Maps</strong>. Por respeito pela sua privacidade, o mapa <strong>não é carregado até que aceite</strong> os cookies (no banner ou no botão «Aceitar e ver o mapa»). Enquanto não aceitar, nenhum cookie do Google é instalado. Ao aceitar, o Google (Google Ireland Ltd / Google LLC) pode instalar cookies e tratar dados — incluindo o seu endereço IP — nos termos da <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidade do Google</a>. Pode retirar o consentimento a qualquer momento em «Definições de cookies».</p>
 
-        <h2>4. Ligações para sítios externos</h2>
-        <p>Quando clica em ligações para o WhatsApp, Facebook, Instagram, Google Maps ou para o Livro de Reclamações, é encaminhado para serviços de terceiros que têm as suas próprias políticas de cookies e de privacidade, pelas quais a HN Transportes não é responsável.</p>
+        <h2 data-i18n="ck.s4h">4. Ligações para sítios externos</h2>
+        <p data-i18n="ck.s4p">Quando clica em ligações para o WhatsApp, Facebook, Instagram, Google Maps ou para o Livro de Reclamações, é encaminhado para serviços de terceiros que têm as suas próprias políticas de cookies e de privacidade, pelas quais a HN Transportes não é responsável.</p>
 
-        <h2>5. Como gerir cookies no seu navegador</h2>
-        <p>Embora este sítio não instale cookies não essenciais, pode, a qualquer momento, configurar o seu navegador para bloquear ou eliminar cookies de qualquer sítio. Consulte a ajuda do seu navegador (Chrome, Safari, Firefox, Edge, etc.) para saber como o fazer.</p>
+        <h2 data-i18n="ck.s5h">5. Como gerir o seu consentimento e os cookies</h2>
+        <p data-i18n="ck.s5p">Pode aceitar ou rejeitar os cookies não essenciais no banner apresentado na primeira visita e alterar essa escolha quando quiser através de «Definições de cookies», no rodapé do site. Pode também, a qualquer momento, configurar o seu navegador (Chrome, Safari, Firefox, Edge, etc.) para bloquear ou eliminar cookies.</p>
 
-        <h2>6. Alterações</h2>
-        <p>Caso, no futuro, venhamos a introduzir cookies não essenciais, esta política será atualizada e será implementado um mecanismo de consentimento prévio adequado, antes da instalação desses cookies.</p>
+        <h2 data-i18n="ck.s6h">6. Alterações</h2>
+        <p data-i18n="ck.s6p">Esta política pode ser atualizada sempre que necessário. A versão em vigor é a publicada nesta página, identificada pela data de última atualização indicada acima.</p>
 
-        <p style="margin-top:32px"><a class="linkarrow" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg> Voltar à página inicial</a></p>
+        <p style="margin-top:32px"><a class="linkarrow" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg> <span data-i18n="legal.back">Voltar à página inicial</span></a></p>
       </article>
     </div>
   </main>
@@ -94,16 +122,27 @@
         </p>
       </div>
       <div class="footer__bottom">
-        <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · Todos os direitos reservados.</span>
+        <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
         <nav aria-label="Ligações legais">
-          <a href="privacidade.html">Política de Privacidade</a>
-          <a href="cookies.html">Política de Cookies</a>
-          <a href="termos.html">Termos e Aviso Legal</a>
+          <a href="privacidade.html" data-i18n="footer.priv">Política de Privacidade</a>
+          <a href="cookies.html" data-i18n="footer.cookies">Política de Cookies</a>
+          <a href="termos.html" data-i18n="footer.termos">Termos e Aviso Legal</a>
+          <button type="button" class="cookie-settings" id="cookie-settings" data-i18n="footer.cookieset">Definições de cookies</button>
         </nav>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <!-- Banner de consentimento de cookies (RGPD / Lei 41/2004) -->
+  <div class="cookiebar" id="cookiebar" role="region" aria-label="Consentimento de cookies" hidden>
+    <p class="cookiebar__txt" data-i18n="cookie.txt">Utilizamos cookies do <strong>Google Maps</strong> apenas para mostrar o mapa da nossa localização. Pode aceitar ou rejeitar — o site funciona na mesma. Saiba mais na <a href="cookies.html">Política de Cookies</a>.</p>
+    <div class="cookiebar__actions">
+      <button type="button" class="btn btn--outline-light" id="cookie-reject" data-i18n="cookie.reject">Rejeitar</button>
+      <button type="button" class="btn btn--accent" id="cookie-accept" data-i18n="cookie.accept">Aceitar</button>
+    </div>
+  </div>
+
+  <script src="assets/js/i18n.js?v=1" defer></script>
+  <script src="assets/js/main.js?v=5" defer></script>
 </body>
 </html>

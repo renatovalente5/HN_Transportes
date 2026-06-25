@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Política de Privacidade | HN Transportes</title>
-  <meta name="description" content="Política de Privacidade da Hélder Nunes - Transportes, Unipessoal, Lda (HN Transportes), nos termos do RGPD." />
+  <script>
+    (function () {
+      try {
+        var k = "hn-lang", s = null, sup = ["pt", "es", "en"];
+        try { s = localStorage.getItem(k); } catch (e) {}
+        var l = (s && sup.indexOf(s) > -1) ? s : (navigator.language || "pt").slice(0, 2).toLowerCase();
+        if (sup.indexOf(l) < 0) l = "pt";
+        document.documentElement.lang = { pt: "pt-PT", es: "es-ES", en: "en-US" }[l];
+        if (l !== "pt") {
+          var d = document.documentElement;
+          d.className += (d.className ? " " : "") + "i18n-pending";
+          setTimeout(function () { d.classList.remove("i18n-pending"); }, 1200);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title data-i18n="pp.metaTitle">Política de Privacidade | HN Transportes</title>
+  <meta name="description" data-i18n-content="pp.metaDesc" content="Política de Privacidade da Hélder Nunes - Transportes, Unipessoal, Lda (HN Transportes), nos termos do RGPD." />
   <meta name="robots" content="all" />
   <meta name="theme-color" content="#0f1116" />
   <link rel="canonical" href="https://hntransportes.pt/privacidade.html" />
@@ -12,26 +28,36 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png" />
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
 </head>
 <body>
-  <a class="skip" href="#main">Saltar para o conteúdo</a>
+  <a class="skip" href="#main" data-i18n="a11y.skip">Saltar para o conteúdo</a>
 
   <header class="header is-stuck" id="top">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="HN Transportes — início">
+      <a class="brand" href="index.html" aria-label="HN Transportes">
         <img src="assets/img/logo.png" alt="" width="555" height="468" />
         <span class="brand__txt"><strong>HN Transportes</strong><span>Hélder Nunes</span></span>
       </a>
-      <nav class="nav" id="nav" aria-label="Navegação principal">
-        <a href="index.html#servicos">Serviços</a>
-        <a href="index.html#sobre">Sobre</a>
-        <a href="index.html#frota">Frota</a>
-        <a href="index.html#cobertura">Cobertura</a>
-        <a href="index.html#contactos">Contactos</a>
+      <nav class="nav" id="nav" data-i18n-aria="a11y.nav" aria-label="Navegação principal">
+        <a href="index.html#servicos" data-i18n="nav.servicos">Serviços</a>
+        <a href="index.html#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="index.html#frota" data-i18n="nav.frota">Frota</a>
+        <a href="index.html#cobertura" data-i18n="nav.cobertura">Cobertura</a>
+        <a href="index.html#contactos" data-i18n="nav.contactos">Contactos</a>
+        <div class="langswitch langswitch--menu" role="group" data-i18n-aria="a11y.langs" aria-label="Idioma">
+          <button type="button" data-lang="pt">PT</button>
+          <button type="button" data-lang="es">ES</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
       </nav>
       <div class="header__actions">
-        <a class="btn btn--accent" href="index.html#contactos">Pedir orçamento</a>
+        <div class="langswitch" role="group" data-i18n-aria="a11y.langs" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--accent" href="index.html#contactos" data-i18n="cta.quote">Pedir orçamento</a>
         <button class="navtoggle" id="navtoggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span></button>
       </div>
     </div>
@@ -40,29 +66,30 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <p class="crumbs"><a href="index.html">Início</a> · Política de Privacidade</p>
-        <h1>Política de Privacidade</h1>
-        <p>Como a HN Transportes recolhe, utiliza e protege os seus dados pessoais, em conformidade com o Regulamento Geral sobre a Proteção de Dados (RGPD).</p>
+        <p class="crumbs"><a href="index.html" data-i18n="legal.home">Início</a> · <span data-i18n="pp.crumb">Política de Privacidade</span></p>
+        <h1 data-i18n="pp.h1">Política de Privacidade</h1>
+        <p data-i18n="pp.sub">Como a HN Transportes recolhe, utiliza e protege os seus dados pessoais, em conformidade com o Regulamento Geral sobre a Proteção de Dados (RGPD).</p>
       </div>
     </section>
 
     <div class="container">
       <article class="prose">
-        <p class="updated">Última atualização: 23 de junho de 2026</p>
+        <p class="updated" data-i18n="pp.updated">Última atualização: 25 de junho de 2026</p>
+        <p class="legal-note" data-i18n="legal.prevail">Em caso de divergência entre versões, prevalece a versão em português.</p>
 
-        <h2>1. Responsável pelo tratamento</h2>
-        <p>O responsável pelo tratamento dos dados pessoais é:</p>
-        <ul>
+        <h2 data-i18n="pp.s1h">1. Responsável pelo tratamento</h2>
+        <p data-i18n="pp.s1p1">O responsável pelo tratamento dos dados pessoais é:</p>
+        <ul data-i18n="pp.s1list">
           <li><strong>Hélder Nunes - Transportes, Unipessoal, Lda</strong> (marca «HN Transportes»)</li>
           <li>NIPC: 516490141</li>
           <li>Sede: Rua da Gandara 158, 3700-607 Cesar, Oliveira de Azeméis, Aveiro</li>
-          <li>Email: <a href="mailto:info@hntransportes.pt">info@hntransportes.pt</a> · Telefone: <a href="tel:+351913310440">+351 913 310 440</a></li>
+          <li>Email: <a href="mailto:info@hntransportes.pt">info@hntransportes.pt</a> · Telefone: <a href="tel:+351913310440">+351 913 310 440</a> (Chamada para a rede móvel nacional)</li>
         </ul>
-        <p>A empresa não está legalmente obrigada a designar um Encarregado de Proteção de Dados (DPO). Para qualquer questão sobre privacidade, utilize os contactos acima.</p>
+        <p data-i18n="pp.s1p2">A empresa não está legalmente obrigada a designar um Encarregado de Proteção de Dados (DPO). Para qualquer questão sobre privacidade, utilize os contactos acima.</p>
 
-        <h2>2. Que dados tratamos e com que finalidade</h2>
-        <p>Este sítio é meramente informativo e <strong>não dispõe de formulário de contacto, nem de área de cliente, comércio eletrónico, publicidade ou sistemas de rastreamento</strong>. Os dados pessoais que tratamos resultam, essencialmente, do contacto que estabelece connosco:</p>
-        <table>
+        <h2 data-i18n="pp.s2h">2. Que dados tratamos e com que finalidade</h2>
+        <p data-i18n="pp.s2p">Este sítio é meramente informativo e <strong>não dispõe de formulário de contacto, nem de área de cliente, comércio eletrónico, publicidade ou sistemas de rastreamento</strong>. Os dados pessoais que tratamos resultam, essencialmente, do contacto que estabelece connosco:</p>
+        <table data-i18n="pp.s2table">
           <thead><tr><th>Contexto</th><th>Dados</th><th>Finalidade</th></tr></thead>
           <tbody>
             <tr><td>Contacto por email, telefone ou WhatsApp</td><td>Nome, contacto (email/telefone) e o conteúdo da mensagem</td><td>Responder ao seu pedido, prestar informações e elaborar orçamentos de transporte</td></tr>
@@ -71,38 +98,38 @@
           </tbody>
         </table>
 
-        <h2>3. Fundamento jurídico</h2>
-        <ul>
+        <h2 data-i18n="pp.s3h">3. Fundamento jurídico</h2>
+        <ul data-i18n="pp.s3list">
           <li><strong>Diligências pré-contratuais e execução de contrato</strong> (art. 6.º, n.º 1, al. b) do RGPD) — para responder a pedidos e prestar o serviço;</li>
           <li><strong>Interesse legítimo</strong> (art. 6.º, n.º 1, al. f) — para responder a contactos e assegurar a segurança do sítio;</li>
           <li><strong>Cumprimento de obrigações legais</strong> (art. 6.º, n.º 1, al. c) — designadamente obrigações fiscais e contabilísticas.</li>
         </ul>
 
-        <h2>4. Prazo de conservação</h2>
-        <p>Os dados de contacto são conservados apenas pelo tempo necessário para responder ao seu pedido e gerir a eventual relação comercial. Os dados associados a serviços prestados e à faturação são conservados pelos prazos legais aplicáveis (designadamente os prazos fiscais e contabilísticos).</p>
+        <h2 data-i18n="pp.s4h">4. Prazo de conservação</h2>
+        <p data-i18n="pp.s4p">Os dados de contacto são conservados apenas pelo tempo necessário para responder ao seu pedido e gerir a eventual relação comercial. Os dados associados a serviços prestados e à faturação são conservados pelos prazos legais aplicáveis (designadamente os prazos fiscais e contabilísticos).</p>
 
-        <h2>5. Destinatários e subcontratantes</h2>
-        <p>Não vendemos nem cedemos os seus dados a terceiros para fins de marketing. Os dados poderão ser tratados por prestadores de serviços que atuam por nossa conta, nomeadamente o serviço de alojamento do sítio. Quando contacta através do WhatsApp, a comunicação é igualmente tratada pela Meta Platforms, nos termos da política de privacidade própria dessa plataforma. A página de contactos inclui o Google Maps em modo de carregamento sob pedido — só se clicar em «Carregar mapa» é que os seus dados (incluindo o endereço IP) passam a ser tratados pelo Google.</p>
+        <h2 data-i18n="pp.s5h">5. Destinatários e subcontratantes</h2>
+        <p data-i18n="pp.s5p">Não vendemos nem cedemos os seus dados a terceiros para fins de marketing. Os dados poderão ser tratados por prestadores de serviços que atuam por nossa conta, nomeadamente o serviço de alojamento do sítio. Quando contacta através do WhatsApp, a comunicação é igualmente tratada pela Meta Platforms, nos termos da política de privacidade própria dessa plataforma. A página de contactos pode apresentar o Google Maps; o mapa só é carregado se aceitar os cookies, passando então o Google (Google Ireland Ltd / Google LLC) a tratar dados, incluindo o seu endereço IP, para apresentar o mapa.</p>
 
-        <h2>6. Transferências internacionais</h2>
-        <p>O sítio está alojado no serviço <strong>GitHub Pages</strong> (GitHub, Inc., EUA), pelo que dados técnicos de acesso podem ser tratados fora do Espaço Económico Europeu, ao abrigo de garantias adequadas previstas no RGPD (designadamente cláusulas contratuais-tipo e/ou mecanismos de adequação aplicáveis). O mesmo se aplica ao contacto via WhatsApp (Meta Platforms) e ao Google Maps (Google), caso opte por carregar o mapa na página de contactos.</p>
+        <h2 data-i18n="pp.s6h">6. Transferências internacionais</h2>
+        <p data-i18n="pp.s6p">O sítio está alojado no serviço <strong>GitHub Pages</strong> (GitHub, Inc., EUA), pelo que dados técnicos de acesso podem ser tratados fora do Espaço Económico Europeu, ao abrigo de garantias adequadas previstas no RGPD (designadamente cláusulas contratuais-tipo e/ou mecanismos de adequação aplicáveis). O mesmo se aplica ao contacto via WhatsApp (Meta Platforms) e, caso aceite os cookies do mapa, ao Google Maps (Google), com transferência para os Estados Unidos ao abrigo de garantias adequadas.</p>
 
-        <h2>7. Os seus direitos</h2>
-        <p>Enquanto titular dos dados, pode exercer, a qualquer momento, os direitos de <strong>acesso, retificação, apagamento, limitação do tratamento, portabilidade e oposição</strong>. Para o efeito, contacte-nos através de <a href="mailto:info@hntransportes.pt">info@hntransportes.pt</a>. A sua identidade poderá ter de ser confirmada antes de darmos seguimento ao pedido.</p>
+        <h2 data-i18n="pp.s7h">7. Os seus direitos</h2>
+        <p data-i18n="pp.s7p">Enquanto titular dos dados, pode exercer, a qualquer momento, os direitos de <strong>acesso, retificação, apagamento, limitação do tratamento, portabilidade e oposição</strong>. Para o efeito, contacte-nos através de <a href="mailto:info@hntransportes.pt">info@hntransportes.pt</a>. A sua identidade poderá ter de ser confirmada antes de darmos seguimento ao pedido.</p>
 
-        <h2>8. Reclamação à autoridade de controlo</h2>
-        <p>Sem prejuízo de outra via, tem o direito de apresentar reclamação à autoridade de controlo competente em Portugal — a <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong>, <a href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a>.</p>
+        <h2 data-i18n="pp.s8h">8. Reclamação à autoridade de controlo</h2>
+        <p data-i18n="pp.s8p">Sem prejuízo de outra via, tem o direito de apresentar reclamação à autoridade de controlo competente em Portugal — a <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong>, <a href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a>.</p>
 
-        <h2>9. Decisões automatizadas</h2>
-        <p>Não são tomadas decisões individuais automatizadas, incluindo a definição de perfis, com base nos seus dados.</p>
+        <h2 data-i18n="pp.s9h">9. Decisões automatizadas</h2>
+        <p data-i18n="pp.s9p">Não são tomadas decisões individuais automatizadas, incluindo a definição de perfis, com base nos seus dados.</p>
 
-        <h2>10. Cookies</h2>
-        <p>Este sítio não utiliza cookies não essenciais. Para mais detalhes, consulte a nossa <a href="cookies.html">Política de Cookies</a>.</p>
+        <h2 data-i18n="pp.s10h">10. Cookies</h2>
+        <p data-i18n="pp.s10p">Este sítio só utiliza cookies não essenciais (Google Maps) com o seu consentimento. Para mais detalhes, consulte a nossa <a href="cookies.html">Política de Cookies</a>.</p>
 
-        <h2>11. Alterações</h2>
-        <p>Esta política pode ser atualizada sempre que necessário. A versão em vigor é a publicada nesta página, identificada pela data de última atualização indicada acima.</p>
+        <h2 data-i18n="pp.s11h">11. Alterações</h2>
+        <p data-i18n="pp.s11p">Esta política pode ser atualizada sempre que necessário. A versão em vigor é a publicada nesta página, identificada pela data de última atualização indicada acima.</p>
 
-        <p style="margin-top:32px"><a class="linkarrow" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg> Voltar à página inicial</a></p>
+        <p style="margin-top:32px"><a class="linkarrow" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg> <span data-i18n="legal.back">Voltar à página inicial</span></a></p>
       </article>
     </div>
   </main>
@@ -118,16 +145,27 @@
         </p>
       </div>
       <div class="footer__bottom">
-        <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · Todos os direitos reservados.</span>
+        <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
         <nav aria-label="Ligações legais">
-          <a href="privacidade.html">Política de Privacidade</a>
-          <a href="cookies.html">Política de Cookies</a>
-          <a href="termos.html">Termos e Aviso Legal</a>
+          <a href="privacidade.html" data-i18n="footer.priv">Política de Privacidade</a>
+          <a href="cookies.html" data-i18n="footer.cookies">Política de Cookies</a>
+          <a href="termos.html" data-i18n="footer.termos">Termos e Aviso Legal</a>
+          <button type="button" class="cookie-settings" id="cookie-settings" data-i18n="footer.cookieset">Definições de cookies</button>
         </nav>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <!-- Banner de consentimento de cookies (RGPD / Lei 41/2004) -->
+  <div class="cookiebar" id="cookiebar" role="region" aria-label="Consentimento de cookies" hidden>
+    <p class="cookiebar__txt" data-i18n="cookie.txt">Utilizamos cookies do <strong>Google Maps</strong> apenas para mostrar o mapa da nossa localização. Pode aceitar ou rejeitar — o site funciona na mesma. Saiba mais na <a href="cookies.html">Política de Cookies</a>.</p>
+    <div class="cookiebar__actions">
+      <button type="button" class="btn btn--outline-light" id="cookie-reject" data-i18n="cookie.reject">Rejeitar</button>
+      <button type="button" class="btn btn--accent" id="cookie-accept" data-i18n="cookie.accept">Aceitar</button>
+    </div>
+  </div>
+
+  <script src="assets/js/i18n.js?v=1" defer></script>
+  <script src="assets/js/main.js?v=5" defer></script>
 </body>
 </html>

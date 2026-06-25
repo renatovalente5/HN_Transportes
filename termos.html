@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Termos e Aviso Legal | HN Transportes</title>
-  <meta name="description" content="Termos de utilização e aviso legal do sítio da HN Transportes — identificação da empresa, propriedade intelectual e resolução de litígios." />
+  <script>
+    (function () {
+      try {
+        var k = "hn-lang", s = null, sup = ["pt", "es", "en"];
+        try { s = localStorage.getItem(k); } catch (e) {}
+        var l = (s && sup.indexOf(s) > -1) ? s : (navigator.language || "pt").slice(0, 2).toLowerCase();
+        if (sup.indexOf(l) < 0) l = "pt";
+        document.documentElement.lang = { pt: "pt-PT", es: "es-ES", en: "en-US" }[l];
+        if (l !== "pt") {
+          var d = document.documentElement;
+          d.className += (d.className ? " " : "") + "i18n-pending";
+          setTimeout(function () { d.classList.remove("i18n-pending"); }, 1200);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title data-i18n="tm.metaTitle">Termos e Aviso Legal | HN Transportes</title>
+  <meta name="description" data-i18n-content="tm.metaDesc" content="Termos de utilização e aviso legal do sítio da HN Transportes — identificação da empresa, propriedade intelectual e resolução de litígios." />
   <meta name="robots" content="all" />
   <meta name="theme-color" content="#0f1116" />
   <link rel="canonical" href="https://hntransportes.pt/termos.html" />
@@ -12,26 +28,36 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png" />
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
 </head>
 <body>
-  <a class="skip" href="#main">Saltar para o conteúdo</a>
+  <a class="skip" href="#main" data-i18n="a11y.skip">Saltar para o conteúdo</a>
 
   <header class="header is-stuck" id="top">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="HN Transportes — início">
+      <a class="brand" href="index.html" aria-label="HN Transportes">
         <img src="assets/img/logo.png" alt="" width="555" height="468" />
         <span class="brand__txt"><strong>HN Transportes</strong><span>Hélder Nunes</span></span>
       </a>
-      <nav class="nav" id="nav" aria-label="Navegação principal">
-        <a href="index.html#servicos">Serviços</a>
-        <a href="index.html#sobre">Sobre</a>
-        <a href="index.html#frota">Frota</a>
-        <a href="index.html#cobertura">Cobertura</a>
-        <a href="index.html#contactos">Contactos</a>
+      <nav class="nav" id="nav" data-i18n-aria="a11y.nav" aria-label="Navegação principal">
+        <a href="index.html#servicos" data-i18n="nav.servicos">Serviços</a>
+        <a href="index.html#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="index.html#frota" data-i18n="nav.frota">Frota</a>
+        <a href="index.html#cobertura" data-i18n="nav.cobertura">Cobertura</a>
+        <a href="index.html#contactos" data-i18n="nav.contactos">Contactos</a>
+        <div class="langswitch langswitch--menu" role="group" data-i18n-aria="a11y.langs" aria-label="Idioma">
+          <button type="button" data-lang="pt">PT</button>
+          <button type="button" data-lang="es">ES</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
       </nav>
       <div class="header__actions">
-        <a class="btn btn--accent" href="index.html#contactos">Pedir orçamento</a>
+        <div class="langswitch" role="group" data-i18n-aria="a11y.langs" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--accent" href="index.html#contactos" data-i18n="cta.quote">Pedir orçamento</a>
         <button class="navtoggle" id="navtoggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span></button>
       </div>
     </div>
@@ -40,19 +66,20 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <p class="crumbs"><a href="index.html">Início</a> · Termos e Aviso Legal</p>
-        <h1>Termos e Aviso Legal</h1>
-        <p>Condições de utilização deste sítio e identificação legal da empresa, nos termos do Decreto-Lei n.º 7/2004 e do Código das Sociedades Comerciais.</p>
+        <p class="crumbs"><a href="index.html" data-i18n="legal.home">Início</a> · <span data-i18n="tm.crumb">Termos e Aviso Legal</span></p>
+        <h1 data-i18n="tm.h1">Termos e Aviso Legal</h1>
+        <p data-i18n="tm.sub">Condições de utilização deste sítio e identificação legal da empresa, nos termos do Decreto-Lei n.º 7/2004 e do Código das Sociedades Comerciais.</p>
       </div>
     </section>
 
     <div class="container">
       <article class="prose">
-        <p class="updated">Última atualização: 23 de junho de 2026</p>
+        <p class="updated" data-i18n="tm.updated">Última atualização: 23 de junho de 2026</p>
+        <p class="legal-note" data-i18n="legal.prevail">Em caso de divergência entre versões, prevalece a versão em português.</p>
 
-        <h2>1. Identificação</h2>
-        <p>O presente sítio é propriedade de:</p>
-        <ul>
+        <h2 data-i18n="tm.s1h">1. Identificação</h2>
+        <p data-i18n="tm.s1p">O presente sítio é propriedade de:</p>
+        <ul data-i18n="tm.s1list">
           <li><strong>Denominação social:</strong> Hélder Nunes - Transportes, Unipessoal, Lda</li>
           <li><strong>Marca comercial:</strong> HN Transportes</li>
           <li><strong>NIPC / NIF:</strong> 516490141</li>
@@ -61,36 +88,36 @@
           <li><strong>Registo:</strong> Matriculada na Conservatória do Registo Comercial sob o n.º 516490141</li>
           <li><strong>CAE:</strong> 49410 — Transportes rodoviários de mercadorias</li>
           <li><strong>Atividade:</strong> licenciada e supervisionada pelo IMT, I.P. (Instituto da Mobilidade e dos Transportes)</li>
-          <li><strong>Contactos:</strong> <a href="mailto:info@hntransportes.pt">info@hntransportes.pt</a> · <a href="tel:+351913310440">+351 913 310 440</a></li>
+          <li><strong>Contactos:</strong> <a href="mailto:info@hntransportes.pt">info@hntransportes.pt</a> · <a href="tel:+351913310440">+351 913 310 440</a> (Chamada para a rede móvel nacional)</li>
         </ul>
 
-        <h2>2. Objeto</h2>
-        <p>Este sítio tem natureza meramente informativa e destina-se a apresentar os serviços de transporte de mercadorias prestados pela HN Transportes. A consulta do sítio não constitui, por si só, qualquer relação contratual. Os serviços são contratados por contacto direto e formalizados nos termos acordados entre as partes.</p>
+        <h2 data-i18n="tm.s2h">2. Objeto</h2>
+        <p data-i18n="tm.s2p">Este sítio tem natureza meramente informativa e destina-se a apresentar os serviços de transporte de mercadorias prestados pela HN Transportes. A consulta do sítio não constitui, por si só, qualquer relação contratual. Os serviços são contratados por contacto direto e formalizados nos termos acordados entre as partes.</p>
 
-        <h2>3. Propriedade intelectual</h2>
-        <p>O logótipo «HN Transportes», os textos, as imagens da frota e os demais conteúdos deste sítio são propriedade da Hélder Nunes - Transportes, Unipessoal, Lda ou são utilizados com autorização, estando protegidos pela legislação aplicável. Não é permitida a sua reprodução, distribuição ou utilização sem autorização prévia e por escrito.</p>
+        <h2 data-i18n="tm.s3h">3. Propriedade intelectual</h2>
+        <p data-i18n="tm.s3p">O logótipo «HN Transportes», os textos, as imagens da frota e os demais conteúdos deste sítio são propriedade da Hélder Nunes - Transportes, Unipessoal, Lda ou são utilizados com autorização, estando protegidos pela legislação aplicável. Não é permitida a sua reprodução, distribuição ou utilização sem autorização prévia e por escrito.</p>
 
-        <h2>4. Limitação de responsabilidade</h2>
-        <p>Procuramos manter a informação deste sítio atualizada e correta. Contudo, a HN Transportes não se responsabiliza por eventuais imprecisões ou pela indisponibilidade temporária do sítio. As condições concretas de cada serviço (prazos, preços e demais termos) prevalecem sobre quaisquer indicações genéricas aqui apresentadas.</p>
+        <h2 data-i18n="tm.s4h">4. Limitação de responsabilidade</h2>
+        <p data-i18n="tm.s4p">Procuramos manter a informação deste sítio atualizada e correta. Contudo, a HN Transportes não se responsabiliza por eventuais imprecisões ou pela indisponibilidade temporária do sítio. As condições concretas de cada serviço (prazos, preços e demais termos) prevalecem sobre quaisquer indicações genéricas aqui apresentadas.</p>
 
-        <h2>5. Ligações para sítios de terceiros</h2>
-        <p>Este sítio contém ligações para plataformas de terceiros (WhatsApp, Facebook, Instagram, Google Maps e Livro de Reclamações). A HN Transportes não controla nem é responsável pelo conteúdo ou pelas políticas desses sítios.</p>
+        <h2 data-i18n="tm.s5h">5. Ligações para sítios de terceiros</h2>
+        <p data-i18n="tm.s5p">Este sítio contém ligações para plataformas de terceiros (WhatsApp, Facebook, Instagram, Google Maps e Livro de Reclamações). A HN Transportes não controla nem é responsável pelo conteúdo ou pelas políticas desses sítios.</p>
 
-        <h2>6. Livro de Reclamações</h2>
-        <p>A HN Transportes dispõe de Livro de Reclamações. Pode apresentar uma reclamação através da plataforma digital em <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">www.livroreclamacoes.pt</a>.</p>
-        <p>Entidade competente para apreciar reclamações no setor dos transportes: <strong>AMT — Autoridade da Mobilidade e dos Transportes</strong>, Av. António Augusto de Aguiar, n.º 128, 1050-020 Lisboa — <a href="mailto:reclamacoes@amt-autoridade.pt">reclamacoes@amt-autoridade.pt</a>.</p>
+        <h2 data-i18n="tm.s6h">6. Livro de Reclamações</h2>
+        <p data-i18n="tm.s6p1">A HN Transportes dispõe de Livro de Reclamações. Pode apresentar uma reclamação através da plataforma digital em <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">www.livroreclamacoes.pt</a>.</p>
+        <p data-i18n="tm.s6p2">Entidade competente para apreciar reclamações no setor dos transportes: <strong>AMT — Autoridade da Mobilidade e dos Transportes</strong>, Av. António Augusto de Aguiar, n.º 128, 1050-020 Lisboa — <a href="mailto:reclamacoes@amt-autoridade.pt">reclamacoes@amt-autoridade.pt</a>.</p>
 
-        <h2>7. Resolução alternativa de litígios de consumo</h2>
-        <p>Em caso de litígio de consumo, o consumidor pode recorrer à entidade de Resolução Alternativa de Litígios (RAL) territorialmente competente:</p>
-        <ul>
+        <h2 data-i18n="tm.s7h">7. Resolução alternativa de litígios de consumo</h2>
+        <p data-i18n="tm.s7p">Em caso de litígio de consumo, o consumidor pode recorrer à entidade de Resolução Alternativa de Litígios (RAL) territorialmente competente:</p>
+        <ul data-i18n="tm.s7list">
           <li><strong>CICAP — Tribunal Arbitral do Consumo</strong> (Centro de Informação de Consumo e Arbitragem do Porto) — <a href="https://www.cicap.pt" target="_blank" rel="noopener">www.cicap.pt</a></li>
         </ul>
-        <p>Mais informação sobre os direitos do consumidor em <a href="https://www.consumidor.gov.pt" target="_blank" rel="noopener">www.consumidor.gov.pt</a>.</p>
+        <p data-i18n="tm.s7p2">Mais informação sobre os direitos do consumidor em <a href="https://www.consumidor.gov.pt" target="_blank" rel="noopener">www.consumidor.gov.pt</a>.</p>
 
-        <h2>8. Lei aplicável e foro</h2>
-        <p>Os presentes termos regem-se pela lei portuguesa. Para a resolução de qualquer litígio emergente da utilização deste sítio é competente o foro da comarca da sede da empresa, sem prejuízo das regras imperativas aplicáveis aos consumidores.</p>
+        <h2 data-i18n="tm.s8h">8. Lei aplicável e foro</h2>
+        <p data-i18n="tm.s8p">Os presentes termos regem-se pela lei portuguesa. Para a resolução de qualquer litígio emergente da utilização deste sítio é competente o foro da comarca da sede da empresa, sem prejuízo das regras imperativas aplicáveis aos consumidores.</p>
 
-        <p style="margin-top:32px"><a class="linkarrow" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg> Voltar à página inicial</a></p>
+        <p style="margin-top:32px"><a class="linkarrow" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg> <span data-i18n="legal.back">Voltar à página inicial</span></a></p>
       </article>
     </div>
   </main>
@@ -106,16 +133,27 @@
         </p>
       </div>
       <div class="footer__bottom">
-        <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · Todos os direitos reservados.</span>
+        <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
         <nav aria-label="Ligações legais">
-          <a href="privacidade.html">Política de Privacidade</a>
-          <a href="cookies.html">Política de Cookies</a>
-          <a href="termos.html">Termos e Aviso Legal</a>
+          <a href="privacidade.html" data-i18n="footer.priv">Política de Privacidade</a>
+          <a href="cookies.html" data-i18n="footer.cookies">Política de Cookies</a>
+          <a href="termos.html" data-i18n="footer.termos">Termos e Aviso Legal</a>
+          <button type="button" class="cookie-settings" id="cookie-settings" data-i18n="footer.cookieset">Definições de cookies</button>
         </nav>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <!-- Banner de consentimento de cookies (RGPD / Lei 41/2004) -->
+  <div class="cookiebar" id="cookiebar" role="region" aria-label="Consentimento de cookies" hidden>
+    <p class="cookiebar__txt" data-i18n="cookie.txt">Utilizamos cookies do <strong>Google Maps</strong> apenas para mostrar o mapa da nossa localização. Pode aceitar ou rejeitar — o site funciona na mesma. Saiba mais na <a href="cookies.html">Política de Cookies</a>.</p>
+    <div class="cookiebar__actions">
+      <button type="button" class="btn btn--outline-light" id="cookie-reject" data-i18n="cookie.reject">Rejeitar</button>
+      <button type="button" class="btn btn--accent" id="cookie-accept" data-i18n="cookie.accept">Aceitar</button>
+    </div>
+  </div>
+
+  <script src="assets/js/i18n.js?v=1" defer></script>
+  <script src="assets/js/main.js?v=5" defer></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* HN Transportes — interações do site. Sem dependências, sem cookies, sem chamadas externas. */
+/* HN Transportes — interações do site. Sem dependências de build; carrega o Google Maps apenas após consentimento de cookies. */
 (function () {
   "use strict";
   var body = document.body;
@@ -43,7 +43,13 @@
   var totop = document.getElementById("totop");
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
-    if (header) header.classList.toggle("is-stuck", y > 8);
+    if (header) {
+      // Histerese: aumentar/encolher em limiares diferentes (>80 / <20) evita o
+      // "tremor" no ponto de transição — encolher o header desloca o scroll e, com
+      // um único limiar, o estado oscilava em loop.
+      if (y > 80) header.classList.add("is-stuck");
+      else if (y < 20) header.classList.remove("is-stuck");
+    }
     if (totop) totop.classList.toggle("show", y > 600);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -56,20 +62,14 @@
     });
   }
 
-  /* ---------- Mapa Google (carregamento sob pedido — sem cookies por defeito) ---------- */
-  var mapLoad = document.getElementById("map-load");
-  if (mapLoad) {
-    mapLoad.addEventListener("click", function () {
-      var box = document.getElementById("map-embed");
-      if (!box) return;
-      var ifr = document.createElement("iframe");
-      ifr.src = "https://www.google.com/maps?q=Rua%20da%20Gandara%20158%2C%203700-607%20Cesar%2C%20Oliveira%20de%20Azem%C3%A9is&output=embed";
-      ifr.title = "Mapa da localização da HN Transportes (Google Maps)";
-      ifr.loading = "lazy";
-      ifr.allowFullscreen = true;
-      ifr.referrerPolicy = "no-referrer-when-downgrade";
-      box.innerHTML = "";
-      box.appendChild(ifr);
+  /* ---------- Logótipo → topo da página ---------- */
+  var brand = document.querySelector(".brand");
+  if (brand && (brand.getAttribute("href") || "").charAt(0) === "#") {
+    brand.addEventListener("click", function (e) {
+      e.preventDefault();
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      if (window.history && location.hash) history.replaceState(null, "", location.pathname + location.search);
     });
   }
 
@@ -115,14 +115,13 @@
   var lb = document.getElementById("lightbox");
   if (gallery && lb) {
     var lbImg = document.getElementById("lb-img");
-    var lbCap = document.getElementById("lb-cap");
     var btnClose = document.getElementById("lb-close");
     var btnPrev = document.getElementById("lb-prev");
     var btnNext = document.getElementById("lb-next");
     var triggers = Array.prototype.slice.call(gallery.querySelectorAll("button"));
     var items = triggers.map(function (b) {
       var img = b.querySelector("img");
-      return { src: img.getAttribute("src"), alt: img.getAttribute("alt"), cap: b.getAttribute("data-cap") || img.getAttribute("alt") };
+      return { src: img.getAttribute("src"), alt: img.getAttribute("alt") };
     });
     var current = 0;
     var lastFocus = null;
@@ -132,7 +131,6 @@
       var it = items[current];
       lbImg.setAttribute("src", it.src);
       lbImg.setAttribute("alt", it.alt);
-      lbCap.textContent = it.cap;
     }
     function open(i) {
       lastFocus = document.activeElement;
@@ -168,4 +166,41 @@
       }
     });
   }
+
+  /* ---------- Consentimento de cookies + mapa Google ---------- */
+  var CK = "hn-cookie-consent";
+  var bar = document.getElementById("cookiebar");
+  var mapBox = document.getElementById("map-embed");
+
+  function loadMap() {
+    if (!mapBox || mapBox.querySelector("iframe")) return;
+    var url = mapBox.getAttribute("data-maps");
+    if (!url) return;
+    var ph = document.getElementById("map-placeholder");
+    var ifr = document.createElement("iframe");
+    ifr.src = url;
+    ifr.title = "Mapa da localização da HN Transportes (Google Maps)";
+    ifr.loading = "lazy";
+    ifr.allowFullscreen = true;
+    ifr.referrerPolicy = "no-referrer-when-downgrade";
+    if (ph) ph.remove();
+    mapBox.appendChild(ifr);
+  }
+  function setConsent(v) { try { localStorage.setItem(CK, v); } catch (e) {} }
+  function getConsent() { try { return localStorage.getItem(CK); } catch (e) { return null; } }
+  function acceptCookies() { setConsent("accepted"); if (bar) bar.hidden = true; loadMap(); }
+  function rejectCookies() { setConsent("rejected"); if (bar) bar.hidden = true; }
+
+  var consent = getConsent();
+  if (consent === "accepted") loadMap();
+  else if (consent !== "rejected" && bar) bar.hidden = false;
+
+  var elAccept = document.getElementById("cookie-accept");
+  var elReject = document.getElementById("cookie-reject");
+  var elMapAccept = document.getElementById("map-accept");
+  var elSettings = document.getElementById("cookie-settings");
+  if (elAccept) elAccept.addEventListener("click", acceptCookies);
+  if (elReject) elReject.addEventListener("click", rejectCookies);
+  if (elMapAccept) elMapAccept.addEventListener("click", acceptCookies);
+  if (elSettings) elSettings.addEventListener("click", function (e) { e.preventDefault(); if (bar) bar.hidden = false; });
 })();
