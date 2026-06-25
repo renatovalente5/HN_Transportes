@@ -46,7 +46,7 @@
   <link rel="manifest" href="site.webmanifest" />
 
   <link rel="preload" href="assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=26" />
 
   <!-- Dados estruturados -->
   <script type="application/ld+json">
@@ -367,24 +367,16 @@
         </div>
       </div>
 
-      <!-- Livro de Reclamações (DL 156/2005) -->
-      <div class="footer__legal">
-        <p>
-          <a class="lr-badge" href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13l3 3v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
-            Livro de Reclamações <small data-i18n="footer.lr.sub">Reclamação online em livroreclamacoes.pt</small>
-          </a>
-        </p>
-      </div>
-
       <div class="footer__bottom">
-        <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
-        <nav aria-label="Ligações legais">
+        <nav class="footer__links" aria-label="Ligações legais">
+          <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a>
           <a href="privacidade.html" data-i18n="footer.priv">Política de Privacidade</a>
           <a href="cookies.html" data-i18n="footer.cookies">Política de Cookies</a>
           <a href="termos.html" data-i18n="footer.termos">Termos e Aviso Legal</a>
           <button type="button" class="cookie-settings" id="cookie-settings" data-i18n="footer.cookieset">Definições de cookies</button>
         </nav>
+        <hr class="footer__rule" />
+        <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
       </div>
     </div>
   </footer>
@@ -415,6 +407,6 @@
   </div>
 
   <script src="assets/js/i18n.js?v=1" defer></script>
-  <script src="assets/js/main.js?v=5" defer></script>
+  <script src="assets/js/main.js?v=6" defer></script>
 </body>
 </html>

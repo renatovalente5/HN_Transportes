@@ -348,17 +348,11 @@ a.ccard__val:hover { color: var(--accent-text); }
 .footer__col li svg { width: 16px; height: 16px; color: var(--accent); flex: none; }
 .footer__col .callnote { display: block; font-size: .78rem; color: #8b95a5; font-weight: 500; margin-top: 2px; }
 
-.footer__legal { padding: 26px 0; border-bottom: 1px solid var(--line-dark); }
-.footer__legal p { font-size: .82rem; color: #79808d; line-height: 1.7; }
-.footer__legal strong { color: var(--muted-dark); }
-.lr-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--dark-2); border: 1px solid var(--line-dark); border-radius: 10px; padding: 10px 16px; font-weight: 700; color: #fff; font-family: var(--font-display); transition: border-color .15s, background .15s; }
-.lr-badge:hover { border-color: var(--accent); }
-.lr-badge svg { width: 20px; color: var(--accent); }
-.lr-badge small { display: block; font-weight: 500; font-size: .72rem; color: var(--muted-dark); font-family: var(--font-body); }
-
-.footer__bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0 30px; }
-.footer__bottom nav { display: flex; gap: 18px; flex-wrap: wrap; }
-.footer__bottom a { font-size: .85rem; }
+.footer__bottom { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; padding: 18px 0 30px; }
+.footer__links { display: flex; gap: 6px 16px; flex-wrap: wrap; justify-content: center; align-items: center; }
+.footer__links > *:not(:last-child)::after { content: "|"; margin-left: 16px; color: rgba(255, 255, 255, .22); }
+.footer__bottom a, .footer__bottom .cookie-settings { font-size: .85rem; }
+.footer__rule { width: 100%; height: 1px; border: 0; background: var(--line-dark); margin: 0; }
 .footer__bottom .copy { font-size: .82rem; color: var(--muted-dark); }
 
 /* ---------- Floating actions ---------- */
@@ -446,7 +440,6 @@ a.ccard__val:hover { color: var(--accent-text); }
   .gallery .wide { grid-column: span 2; }
   .ctaband { flex-direction: column; align-items: flex-start; }
   .footer__top { grid-template-columns: 1fr; }
-  .footer__bottom { flex-direction: column; align-items: flex-start; }
   .hero--editorial .hero__cta { flex-direction: column; }
 }
 @media (max-width: 400px) {
