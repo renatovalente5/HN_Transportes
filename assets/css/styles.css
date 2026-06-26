@@ -441,6 +441,10 @@ a.ccard__val:hover { color: var(--accent-text); }
   .ctaband { flex-direction: column; align-items: flex-start; }
   .footer__top { grid-template-columns: 1fr; }
   .hero--editorial .hero__cta { flex-direction: column; }
+  /* "Como chegar" passa a botão só com o ícone de navegação */
+  .ccard__dir { gap: 0; padding: 9px; }
+  .ccard__dir-txt { display: none; }
+  .ccard--morada .ccard__kick { padding-right: 46px; }
 }
 @media (max-width: 400px) {
   .brand__txt { display: none; }
