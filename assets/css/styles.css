@@ -452,10 +452,7 @@ a.ccard__val:hover { color: var(--accent-text); }
 }
 
 /* ---------- Grupo 1 da auditoria legal (out 2026) ---------- */
-/* Botão do Livro de Reclamações (legal-comum): não herda o tamanho nem a cor das ligações legais do rodapé */
-.footer__bottom a.lr-botao, .footer__bottom a.lr-botao:hover { font-size: max(14px, .95rem); color: #fff; }
-/* O separador «|» das ligações legais ficava dentro do botão vermelho: o botão já se distingue sozinho */
-.footer__links > a.lr-botao::after { content: none; }
+/* Livro de Reclamações (legal-comum, discreto): com a letra, a cor e o separador das outras ligações legais */
 .contact__livro { margin: clamp(20px, 3vw, 28px) 0 0; text-align: center; }
 /* Nota do custo da chamada junto ao botão «Ligar» (DL 59/2021, art. 3.º) */
 .hero__callnote { margin-top: 10px; font-size: .8rem; color: var(--muted); }
