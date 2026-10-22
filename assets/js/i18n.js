@@ -1,8 +1,9 @@
 /* HN Transportes — i18n no lado do cliente (sem build).
    Idiomas: PT (pt-PT, por defeito), ES (es-ES), EN (en-US).
    Aplica traduções a [data-i18n] (innerHTML), [data-i18n-alt], [data-i18n-aria]
-   e [data-i18n-content] (atributo content de <meta>). A escolha é guardada em
-   localStorage; na 1.ª visita deteta o idioma do navegador só se não houver escolha. */
+   e [data-i18n-content] (atributo content de <meta>). A língua só é guardada em
+   localStorage (hn-lang) quando o visitante carrega em PT, ES ou EN; sem escolha,
+   segue a língua do navegador em cada visita, sem gravar nada (Lei 41/2004, art. 5.º). */
 (function () {
   "use strict";
 
@@ -25,7 +26,7 @@
       "pp.crumb": "Política de Privacidade",
       "pp.h1": "Política de Privacidade",
       "pp.sub": "Como a HN Transportes recolhe, utiliza e protege os seus dados pessoais, em conformidade com o Regulamento Geral sobre a Proteção de Dados (RGPD).",
-      "pp.updated": "Última atualização: 25 de junho de 2026",
+      "pp.updated": "Última atualização: 22 de outubro de 2026",
       "pp.s1h": "1. Responsável pelo tratamento",
       "pp.s1p1": "O responsável pelo tratamento dos dados pessoais é:",
       "pp.s1list": "<li><strong>Hélder Nunes - Transportes, Unipessoal, Lda</strong> (marca «HN Transportes»)</li><li>NIPC: 516490141</li><li>Sede: Rua da Gandara 158, 3700-607 Cesar, Oliveira de Azeméis, Aveiro</li><li>Email: <a href=\"mailto:info@hntransportes.pt\">info@hntransportes.pt</a> · Telefone: <a href=\"tel:+351913310440\">+351 913 310 440</a> (Chamada para a rede móvel nacional)</li>",
@@ -38,9 +39,9 @@
       "pp.s4h": "4. Prazo de conservação",
       "pp.s4p": "Os dados de contacto são conservados apenas pelo tempo necessário para responder ao seu pedido e gerir a eventual relação comercial. Os dados associados a serviços prestados e à faturação são conservados pelos prazos legais aplicáveis (designadamente os prazos fiscais e contabilísticos).",
       "pp.s5h": "5. Destinatários e subcontratantes",
-      "pp.s5p": "Não vendemos nem cedemos os seus dados a terceiros para fins de marketing. Os dados poderão ser tratados por prestadores de serviços que atuam por nossa conta, nomeadamente o serviço de alojamento do sítio. Quando contacta através do WhatsApp, a comunicação é igualmente tratada pela Meta Platforms, nos termos da política de privacidade própria dessa plataforma. A página de contactos pode apresentar o Google Maps; o mapa só é carregado se aceitar os cookies, passando então o Google (Google Ireland Ltd / Google LLC) a tratar dados, incluindo o seu endereço IP, para apresentar o mapa.",
+      "pp.s5p": "Não vendemos nem cedemos os seus dados a terceiros para fins de marketing. Os dados poderão ser tratados por prestadores de serviços que atuam por nossa conta, nomeadamente o serviço de alojamento do sítio. Quando contacta através do WhatsApp, a comunicação é igualmente tratada pela Meta Platforms, nos termos da política de privacidade própria dessa plataforma. A página de contactos pode apresentar o Google Maps; o mapa só é carregado se carregar em «Carregar o mapa», passando então o Google (Google Ireland Ltd / Google LLC) a tratar dados, incluindo o seu endereço IP, para apresentar o mapa. Pode retirá-lo a qualquer momento em «Deixar de carregar o mapa».",
       "pp.s6h": "6. Transferências internacionais",
-      "pp.s6p": "O sítio está alojado no serviço <strong>GitHub Pages</strong> (GitHub, Inc., EUA), pelo que dados técnicos de acesso podem ser tratados fora do Espaço Económico Europeu, ao abrigo de garantias adequadas previstas no RGPD (designadamente cláusulas contratuais-tipo e/ou mecanismos de adequação aplicáveis). O mesmo se aplica ao contacto via WhatsApp (Meta Platforms) e, caso aceite os cookies do mapa, ao Google Maps (Google), com transferência para os Estados Unidos ao abrigo de garantias adequadas.",
+      "pp.s6p": "O sítio está alojado no serviço <strong>GitHub Pages</strong> (GitHub, Inc., EUA), pelo que dados técnicos de acesso podem ser tratados fora do Espaço Económico Europeu, ao abrigo de garantias adequadas previstas no RGPD (designadamente cláusulas contratuais-tipo e/ou mecanismos de adequação aplicáveis). O mesmo se aplica ao contacto via WhatsApp (Meta Platforms) e, caso carregue o mapa, ao Google Maps (Google), com transferência para os Estados Unidos ao abrigo de garantias adequadas.",
       "pp.s7h": "7. Os seus direitos",
       "pp.s7p": "Enquanto titular dos dados, pode exercer, a qualquer momento, os direitos de <strong>acesso, retificação, apagamento, limitação do tratamento, portabilidade e oposição</strong>. Para o efeito, contacte-nos através de <a href=\"mailto:info@hntransportes.pt\">info@hntransportes.pt</a>. A sua identidade poderá ter de ser confirmada antes de darmos seguimento ao pedido.",
       "pp.s8h": "8. Reclamação à autoridade de controlo",
@@ -57,19 +58,19 @@
       "ck.crumb": "Política de Cookies",
       "ck.h1": "Política de Cookies",
       "ck.sub": "Informação sobre a utilização de cookies neste sítio, nos termos do artigo 5.º da Lei n.º 41/2004.",
-      "ck.updated": "Última atualização: 25 de junho de 2026",
+      "ck.updated": "Última atualização: 22 de outubro de 2026",
       "ck.s1h": "1. O que são cookies",
       "ck.s1p": "Os cookies são pequenos ficheiros de texto que um sítio pode guardar no seu dispositivo quando o visita. Servem, por exemplo, para recordar preferências, recolher estatísticas de utilização ou apresentar publicidade direcionada.",
-      "ck.callout": "<strong>Só utilizamos cookies não essenciais com o seu consentimento.</strong> Por defeito, não é instalado qualquer cookie de terceiros. O único cookie não essencial provém do <strong>Google Maps</strong> e só é carregado se aceitar no banner de cookies. Pode alterar a sua escolha a qualquer momento em «Definições de cookies», no rodapé.",
+      "ck.callout": "<strong>Só gravamos alguma coisa no seu aparelho depois de uma escolha sua.</strong> Por defeito, não é instalado qualquer cookie e nenhum conteúdo de terceiros é carregado, por isso este sítio não tem aviso de cookies. O único conteúdo de terceiros é o mapa do <strong>Google Maps</strong>, que só é carregado depois de carregar em «Carregar o mapa» e que pode retirar a qualquer momento em «Deixar de carregar o mapa», junto ao próprio mapa.",
       "ck.s2h": "2. Que cookies utilizamos",
       "ck.s2p": "Não usamos cookies de análise (analytics), de publicidade nem de redes sociais. As tipografias são alojadas no próprio sítio e não existem píxeis de rastreamento. O único tratamento que depende de cookies é o mapa de localização:",
-      "ck.s2table": "<thead><tr><th>Serviço</th><th>Finalidade</th><th>Quando</th></tr></thead><tbody><tr><td>Google Maps (Google)</td><td>Apresentar o mapa interativo da nossa localização</td><td>Apenas após aceitar o banner de cookies</td></tr><tr><td>Preferência de consentimento</td><td>Recordar a sua escolha (aceitar/rejeitar) para não voltar a perguntar</td><td>Essencial — guardado apenas no seu navegador, não é partilhado</td></tr></tbody>",
+      "ck.s2table": "<thead><tr><th>Serviço</th><th>Finalidade</th><th>Quando</th></tr></thead><tbody><tr><td>Google Maps (Google)</td><td>Apresentar o mapa interativo da nossa localização</td><td>Só depois de carregar em «Carregar o mapa»</td></tr><tr><td>Autorização do mapa (<code>hn-mapa-autorizado</code>)</td><td>Recordar que autorizou o mapa, para o carregar nas visitas seguintes</td><td>Só depois de carregar em «Carregar o mapa»; é apagada com «Deixar de carregar o mapa». Fica apenas no seu navegador e não é partilhada</td></tr><tr><td>Língua (<code>hn-lang</code>)</td><td>Recordar a língua que escolheu (PT, ES ou EN)</td><td>Só depois de escolher uma língua nos botões PT, ES ou EN. Fica apenas no seu navegador e não é partilhada</td></tr></tbody>",
       "ck.s3h": "3. Mapa de localização (Google Maps)",
-      "ck.s3p": "A página de contactos pode apresentar um mapa do <strong>Google Maps</strong>. Por respeito pela sua privacidade, o mapa <strong>não é carregado até que aceite</strong> os cookies (no banner ou no botão «Aceitar e ver o mapa»). Enquanto não aceitar, nenhum cookie do Google é instalado. Ao aceitar, o Google (Google Ireland Ltd / Google LLC) pode instalar cookies e tratar dados — incluindo o seu endereço IP — nos termos da <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">política de privacidade do Google</a>. Pode retirar o consentimento a qualquer momento em «Definições de cookies».",
+      "ck.s3p": "A página de contactos pode apresentar um mapa do <strong>Google Maps</strong>. Por respeito pela sua privacidade, o mapa <strong>não é carregado até carregar no botão «Carregar o mapa»</strong>. Até lá, não é feito nenhum pedido à Google nem instalado nenhum cookie do Google. Ao carregar o mapa, o Google (Google Ireland Ltd / Google LLC) pode instalar cookies e tratar dados — incluindo o seu endereço IP — nos termos da <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">política de privacidade do Google</a>. Pode retirar o consentimento a qualquer momento com o botão «Deixar de carregar o mapa», junto ao mapa: o mapa é removido na hora e a escolha é apagada do seu navegador.",
       "ck.s4h": "4. Ligações para sítios externos",
       "ck.s4p": "Quando clica em ligações para o WhatsApp, Facebook, Instagram, Google Maps ou para o Livro de Reclamações, é encaminhado para serviços de terceiros que têm as suas próprias políticas de cookies e de privacidade, pelas quais a HN Transportes não é responsável.",
       "ck.s5h": "5. Como gerir o seu consentimento e os cookies",
-      "ck.s5p": "Pode aceitar ou rejeitar os cookies não essenciais no banner apresentado na primeira visita e alterar essa escolha quando quiser através de «Definições de cookies», no rodapé do site. Pode também, a qualquer momento, configurar o seu navegador (Chrome, Safari, Firefox, Edge, etc.) para bloquear ou eliminar cookies.",
+      "ck.s5p": "Não há aviso de cookies porque nada é gravado no seu aparelho antes de uma escolha sua. Para retirar a autorização do mapa, use o botão «Deixar de carregar o mapa», junto ao mapa, na secção de contactos. A língua pode ser mudada a qualquer momento nos botões PT, ES ou EN. Pode também, a qualquer momento, configurar o seu navegador (Chrome, Safari, Firefox, Edge, etc.) para bloquear ou eliminar cookies e dados de sítios.",
       "ck.s6h": "6. Alterações",
       "ck.s6p": "Esta política pode ser atualizada sempre que necessário. A versão em vigor é a publicada nesta página, identificada pela data de última atualização indicada acima.",
 
@@ -78,7 +79,7 @@
       "tm.crumb": "Termos e Aviso Legal",
       "tm.h1": "Termos e Aviso Legal",
       "tm.sub": "Condições de utilização deste sítio e identificação legal da empresa, nos termos do Decreto-Lei n.º 7/2004 e do Código das Sociedades Comerciais.",
-      "tm.updated": "Última atualização: 23 de junho de 2026",
+      "tm.updated": "Última atualização: 22 de outubro de 2026",
       "tm.s1h": "1. Identificação",
       "tm.s1p": "O presente sítio é propriedade de:",
       "tm.s1list": "<li><strong>Denominação social:</strong> Hélder Nunes - Transportes, Unipessoal, Lda</li><li><strong>Marca comercial:</strong> HN Transportes</li><li><strong>NIPC / NIF:</strong> 516490141</li><li><strong>Sede:</strong> Rua da Gandara 158, 3700-607 Cesar, Oliveira de Azeméis, Aveiro, Portugal</li><li><strong>Capital social:</strong> 50.000,00 €</li><li><strong>Registo:</strong> Matriculada na Conservatória do Registo Comercial sob o n.º 516490141</li><li><strong>CAE:</strong> 49410 — Transportes rodoviários de mercadorias</li><li><strong>Atividade:</strong> licenciada e supervisionada pelo IMT, I.P. (Instituto da Mobilidade e dos Transportes)</li><li><strong>Contactos:</strong> <a href=\"mailto:info@hntransportes.pt\">info@hntransportes.pt</a> · <a href=\"tel:+351913310440\">+351 913 310 440</a> (Chamada para a rede móvel nacional)</li>",
@@ -87,16 +88,14 @@
       "tm.s3h": "3. Propriedade intelectual",
       "tm.s3p": "O logótipo «HN Transportes», os textos, as imagens da frota e os demais conteúdos deste sítio são propriedade da Hélder Nunes - Transportes, Unipessoal, Lda ou são utilizados com autorização, estando protegidos pela legislação aplicável. Não é permitida a sua reprodução, distribuição ou utilização sem autorização prévia e por escrito.",
       "tm.s4h": "4. Limitação de responsabilidade",
-      "tm.s4p": "Procuramos manter a informação deste sítio atualizada e correta. Contudo, a HN Transportes não se responsabiliza por eventuais imprecisões ou pela indisponibilidade temporária do sítio. As condições concretas de cada serviço (prazos, preços e demais termos) prevalecem sobre quaisquer indicações genéricas aqui apresentadas.",
+      "tm.s4p": "Procuramos manter a informação deste sítio atualizada e correta. Contudo, na medida permitida por lei, a HN Transportes não se responsabiliza por eventuais imprecisões ou pela indisponibilidade temporária do sítio. As condições concretas de cada serviço (prazos, preços e demais termos) prevalecem sobre quaisquer indicações genéricas aqui apresentadas.",
       "tm.s5h": "5. Ligações para sítios de terceiros",
       "tm.s5p": "Este sítio contém ligações para plataformas de terceiros (WhatsApp, Facebook, Instagram, Google Maps e Livro de Reclamações). A HN Transportes não controla nem é responsável pelo conteúdo ou pelas políticas desses sítios.",
       "tm.s6h": "6. Livro de Reclamações",
-      "tm.s6p1": "A HN Transportes dispõe de Livro de Reclamações. Pode apresentar uma reclamação através da plataforma digital em <a href=\"https://www.livroreclamacoes.pt\" target=\"_blank\" rel=\"noopener\">www.livroreclamacoes.pt</a>.",
+      "tm.s6p1": "A HN Transportes dispõe de Livro de Reclamações. Pode apresentar uma reclamação através da plataforma digital em <a href=\"https://www.livroreclamacoes.pt/inicio\" target=\"_blank\" rel=\"noopener\">www.livroreclamacoes.pt</a>.",
       "tm.s6p2": "Entidade competente para apreciar reclamações no setor dos transportes: <strong>AMT — Autoridade da Mobilidade e dos Transportes</strong>, Av. António Augusto de Aguiar, n.º 128, 1050-020 Lisboa — <a href=\"mailto:reclamacoes@amt-autoridade.pt\">reclamacoes@amt-autoridade.pt</a>.",
       "tm.s7h": "7. Resolução alternativa de litígios de consumo",
-      "tm.s7p": "Em caso de litígio de consumo, o consumidor pode recorrer à entidade de Resolução Alternativa de Litígios (RAL) territorialmente competente:",
-      "tm.s7list": "<li><strong>CICAP — Tribunal Arbitral do Consumo</strong> (Centro de Informação de Consumo e Arbitragem do Porto) — <a href=\"https://www.cicap.pt\" target=\"_blank\" rel=\"noopener\">www.cicap.pt</a></li>",
-      "tm.s7p2": "Mais informação sobre os direitos do consumidor em <a href=\"https://www.consumidor.gov.pt\" target=\"_blank\" rel=\"noopener\">www.consumidor.gov.pt</a>.",
+      "tm.s7ral": "<div class=\"ral\" lang=\"pt\"><p>Em caso de litígio de consumo, o consumidor pode recorrer a uma entidade de resolução alternativa de litígios de consumo. O centro competente é o do domicílio do consumidor ou do local da contratação; nos litígios de valor até 5 000 €, a arbitragem ou a mediação é obrigatória para o fornecedor se o consumidor a escolher (Lei n.º 24/96, art. 14.º, n.º 2; Lei n.º 144/2015, art. 18.º).</p><ul class=\"ral__lista\"><li><strong>CICAP</strong> — Centro de Informação de Consumo e Arbitragem do Porto (Área Metropolitana do Porto): <a href=\"https://cicap.pt/\" target=\"_blank\" rel=\"noopener\">cicap.pt</a></li><li><strong>CACCL</strong> — Centro de Arbitragem de Conflitos de Consumo de Lisboa (Área Metropolitana de Lisboa): <a href=\"https://www.centroarbitragemlisboa.pt/\" target=\"_blank\" rel=\"noopener\">centroarbitragemlisboa.pt</a></li><li><strong>CIAB</strong> — Centro de Informação, Mediação e Arbitragem de Consumo (Tribunal Arbitral de Consumo) (Distritos de Braga e Viana do Castelo e Alto Tâmega e Barroso): <a href=\"https://ciab.pt/\" target=\"_blank\" rel=\"noopener\">ciab.pt</a></li><li><strong>TRIAVE</strong> — Centro de Arbitragem de Conflitos de Consumo do Ave, Tâmega e Sousa (Vale do Ave, Tâmega e Sousa): <a href=\"https://www.triave.pt/\" target=\"_blank\" rel=\"noopener\">triave.pt</a></li><li><strong>CACRC</strong> — Centro de Arbitragem de Conflitos de Consumo da Região de Coimbra (Distrito de Coimbra): <a href=\"https://cacrc.pt/\" target=\"_blank\" rel=\"noopener\">cacrc.pt</a></li><li><strong>CIMAAL</strong> — Centro de Informação, Mediação e Arbitragem do Algarve (Algarve): <a href=\"https://consumoalgarve.pt/\" target=\"_blank\" rel=\"noopener\">consumoalgarve.pt</a></li><li><strong>CACC RAM</strong> — Centro de Arbitragem de Conflitos de Consumo da Região Autónoma da Madeira (Região Autónoma da Madeira): <a href=\"https://www.madeira.gov.pt/cacc/\" target=\"_blank\" rel=\"noopener\">madeira.gov.pt/cacc</a></li><li><strong>CIMARA</strong> — Centro de Informação, Mediação e Arbitragem de Consumo da Região Açores (Região Autónoma dos Açores): <a href=\"https://ocimara.pt/\" target=\"_blank\" rel=\"noopener\">ocimara.pt</a></li><li><strong>CAUAL</strong> — Centro de Arbitragem da Universidade Autónoma de Lisboa (Lisboa (Universidade Autónoma)): <a href=\"https://arbitragem.grupoautonoma.pt/\" target=\"_blank\" rel=\"noopener\">arbitragem.grupoautonoma.pt</a></li><li><strong>CNIACC</strong> — Centro Nacional de Informação e Arbitragem de Conflitos de Consumo (para quem resida fora das áreas dos outros centros): <a href=\"https://www.cniacc.pt/\" target=\"_blank\" rel=\"noopener\">cniacc.pt</a></li></ul><p>A lista actualizada das entidades está no <a href=\"https://www.consumidor.gov.pt/resolucaoalternativalitigiosdeconsumo/centros-de-arbitragem2/encontrar-a-entidade-competente/lista-de-contactos\" target=\"_blank\" rel=\"noopener\">Portal do Consumidor</a>.</p><p>Se vive noutro país da União Europeia, o Centro Europeu do Consumidor do seu país ajuda gratuitamente nos litígios com empresas de outros países: <a href=\"https://commission.europa.eu/live-work-travel-eu/consumer-rights-and-complaints/resolve-your-consumer-complaint/european-consumer-centres-network-ecc-net_pt\" target=\"_blank\" rel=\"noopener\">Rede de Centros Europeus do Consumidor</a>.</p></div>",
       "tm.s8h": "8. Lei aplicável e foro",
       "tm.s8p": "Os presentes termos regem-se pela lei portuguesa. Para a resolução de qualquer litígio emergente da utilização deste sítio é competente o foro da comarca da sede da empresa, sem prejuízo das regras imperativas aplicáveis aos consumidores.",
       "nav.servicos": "Serviços",
@@ -109,9 +108,11 @@
       "hero.title": "O seu parceiro de <em>confiança</em> no transporte de mercadorias.",
       "hero.lead": "Recolhemos e entregamos a sua carga onde for preciso, com a rapidez que o seu negócio exige.",
       "hero.ligar": "Ligar",
+      "hero.ligarNota": "«Ligar»: +351 913 310 440 (Chamada para a rede móvel nacional)",
       "hero.wa": "ou fale connosco no",
       "hero.panel.eyebrow": "Resposta imediata",
       "phone.note": "(Chamada para a rede móvel nacional)",
+      "livro.sr": " (abre numa nova janela)",
       "hero.img.alt": "Carrinha branca da HN Transportes estacionada junto a um farol ao pôr-do-sol",
 
       "serv.eyebrow": "O que fazemos",
@@ -165,8 +166,9 @@
       "con.h2": "Falamos consigo de imediato",
       "con.sub": "Escolha o canal que preferir. Respondemos a qualquer hora, todos os dias.",
       "map.title": "Onde estamos",
-      "map.note": "Para mostrar o mapa usamos o Google Maps, que instala cookies. Aceite para o ver aqui.",
-      "map.accept": "Aceitar e ver o mapa",
+      "map.note": "O mapa é da Google e só é carregado depois de carregar no botão. Nessa altura a Google recebe o seu endereço IP e pode gravar cookies no seu aparelho.",
+      "map.accept": "Carregar o mapa",
+      "map.retirar": "Deixar de carregar o mapa",
       "map.hint": "Em alternativa, <a href=\"https://www.google.com/maps/search/?api=1&query=Rua%20da%20Gandara%20158%203700-607%20Cesar%20Oliveira%20de%20Azem%C3%A9is\" target=\"_blank\" rel=\"noopener\">abra no Google Maps</a>.",
       "ch.tel": "Telefone",
       "ch.email": "Email",
@@ -183,9 +185,6 @@
       "footer.termos": "Termos e Aviso Legal",
       "footer.cookieset": "Definições de cookies",
 
-      "cookie.txt": "Utilizamos cookies do <strong>Google Maps</strong> apenas para mostrar o mapa da nossa localização. Pode aceitar ou rejeitar — o site funciona na mesma. Saiba mais na <a href=\"cookies.html\">Política de Cookies</a>.",
-      "cookie.reject": "Rejeitar",
-      "cookie.accept": "Aceitar",
 
       "a11y.lightbox": "Visualizador de imagens",
       "a11y.close": "Fechar",
@@ -212,7 +211,7 @@
       "pp.crumb": "Política de Privacidad",
       "pp.h1": "Política de Privacidad",
       "pp.sub": "Cómo HN Transportes recoge, utiliza y protege sus datos personales, de acuerdo con el Reglamento General de Protección de Datos (RGPD).",
-      "pp.updated": "Última actualización: 25 de junio de 2026",
+      "pp.updated": "Última actualización: 22 de octubre de 2026",
       "pp.s1h": "1. Responsable del tratamiento",
       "pp.s1p1": "El responsable del tratamiento de los datos personales es:",
       "pp.s1list": "<li><strong>Hélder Nunes - Transportes, Unipessoal, Lda</strong> (marca «HN Transportes»)</li><li>NIPC: 516490141</li><li>Sede: Rua da Gandara 158, 3700-607 Cesar, Oliveira de Azeméis, Aveiro</li><li>Email: <a href=\"mailto:info@hntransportes.pt\">info@hntransportes.pt</a> · Teléfono: <a href=\"tel:+351913310440\">+351 913 310 440</a> (Llamada a red móvil nacional)</li>",
@@ -225,9 +224,9 @@
       "pp.s4h": "4. Plazo de conservación",
       "pp.s4p": "Los datos de contacto se conservan únicamente durante el tiempo necesario para responder a su solicitud y gestionar la eventual relación comercial. Los datos asociados a servicios prestados y a la facturación se conservan durante los plazos legales aplicables (en particular los plazos fiscales y contables).",
       "pp.s5h": "5. Destinatarios y subcontratistas",
-      "pp.s5p": "No vendemos ni cedemos sus datos a terceros con fines de marketing. Los datos podrán ser tratados por prestadores de servicios que actúan por nuestra cuenta, en particular el servicio de alojamiento del sitio. Cuando contacta a través de WhatsApp, la comunicación es igualmente tratada por Meta Platforms, conforme a la política de privacidad propia de esa plataforma. La página de contacto puede mostrar Google Maps; el mapa solo se carga si acepta las cookies, pasando entonces Google (Google Ireland Ltd / Google LLC) a tratar datos, incluida su dirección IP, para mostrar el mapa.",
+      "pp.s5p": "No vendemos ni cedemos sus datos a terceros con fines de marketing. Los datos podrán ser tratados por prestadores de servicios que actúan por nuestra cuenta, en particular el servicio de alojamiento del sitio. Cuando contacta a través de WhatsApp, la comunicación es igualmente tratada por Meta Platforms, conforme a la política de privacidad propia de esa plataforma. La página de contacto puede mostrar Google Maps; el mapa solo se carga si pulsa «Cargar el mapa», pasando entonces Google (Google Ireland Ltd / Google LLC) a tratar datos, incluida su dirección IP, para mostrar el mapa. Puede retirarlo en cualquier momento con «Dejar de cargar el mapa».",
       "pp.s6h": "6. Transferencias internacionales",
-      "pp.s6p": "El sitio está alojado en el servicio <strong>GitHub Pages</strong> (GitHub, Inc., EE. UU.), por lo que datos técnicos de acceso pueden tratarse fuera del Espacio Económico Europeo, al amparo de garantías adecuadas previstas en el RGPD (en particular cláusulas contractuales tipo y/o mecanismos de adecuación aplicables). Lo mismo se aplica al contacto vía WhatsApp (Meta Platforms) y, si acepta las cookies del mapa, a Google Maps (Google), con transferencia a los Estados Unidos al amparo de garantías adecuadas.",
+      "pp.s6p": "El sitio está alojado en el servicio <strong>GitHub Pages</strong> (GitHub, Inc., EE. UU.), por lo que datos técnicos de acceso pueden tratarse fuera del Espacio Económico Europeo, al amparo de garantías adecuadas previstas en el RGPD (en particular cláusulas contractuales tipo y/o mecanismos de adecuación aplicables). Lo mismo se aplica al contacto vía WhatsApp (Meta Platforms) y, si carga el mapa, a Google Maps (Google), con transferencia a los Estados Unidos al amparo de garantías adecuadas.",
       "pp.s7h": "7. Sus derechos",
       "pp.s7p": "Como titular de los datos, puede ejercer, en cualquier momento, los derechos de <strong>acceso, rectificación, supresión, limitación del tratamiento, portabilidad y oposición</strong>. Para ello, contáctenos a través de <a href=\"mailto:info@hntransportes.pt\">info@hntransportes.pt</a>. Su identidad podrá tener que confirmarse antes de dar curso a la solicitud.",
       "pp.s8h": "8. Reclamación ante la autoridad de control",
@@ -244,19 +243,19 @@
       "ck.crumb": "Política de Cookies",
       "ck.h1": "Política de Cookies",
       "ck.sub": "Información sobre el uso de cookies en este sitio, conforme al artículo 5.º de la Lei n.º 41/2004.",
-      "ck.updated": "Última actualización: 25 de junio de 2026",
+      "ck.updated": "Última actualización: 22 de octubre de 2026",
       "ck.s1h": "1. Qué son las cookies",
       "ck.s1p": "Las cookies son pequeños archivos de texto que un sitio puede guardar en su dispositivo cuando lo visita. Sirven, por ejemplo, para recordar preferencias, recoger estadísticas de uso o mostrar publicidad dirigida.",
-      "ck.callout": "<strong>Solo utilizamos cookies no esenciales con su consentimiento.</strong> Por defecto, no se instala ninguna cookie de terceros. La única cookie no esencial proviene de <strong>Google Maps</strong> y solo se carga si acepta en el banner de cookies. Puede cambiar su elección en cualquier momento en «Configuración de cookies», en el pie de página.",
+      "ck.callout": "<strong>Solo guardamos algo en su dispositivo después de una elección suya.</strong> Por defecto no se instala ninguna cookie ni se carga contenido de terceros, por eso este sitio no tiene aviso de cookies. El único contenido de terceros es el mapa de <strong>Google Maps</strong>, que solo se carga después de pulsar «Cargar el mapa» y que puede retirar en cualquier momento con «Dejar de cargar el mapa», junto al propio mapa.",
       "ck.s2h": "2. Qué cookies utilizamos",
       "ck.s2p": "No usamos cookies de análisis (analytics), de publicidad ni de redes sociales. Las tipografías están alojadas en el propio sitio y no existen píxeles de rastreo. El único tratamiento que depende de cookies es el mapa de localización:",
-      "ck.s2table": "<thead><tr><th>Servicio</th><th>Finalidad</th><th>Cuándo</th></tr></thead><tbody><tr><td>Google Maps (Google)</td><td>Mostrar el mapa interactivo de nuestra ubicación</td><td>Solo tras aceptar el banner de cookies</td></tr><tr><td>Preferencia de consentimiento</td><td>Recordar su elección (aceptar/rechazar) para no volver a preguntar</td><td>Esencial — guardada solo en su navegador, no se comparte</td></tr></tbody>",
+      "ck.s2table": "<thead><tr><th>Servicio</th><th>Finalidad</th><th>Cuándo</th></tr></thead><tbody><tr><td>Google Maps (Google)</td><td>Mostrar el mapa interactivo de nuestra ubicación</td><td>Solo después de pulsar «Cargar el mapa»</td></tr><tr><td>Autorización del mapa (<code>hn-mapa-autorizado</code>)</td><td>Recordar que autorizó el mapa, para cargarlo en las visitas siguientes</td><td>Solo después de pulsar «Cargar el mapa»; se borra con «Dejar de cargar el mapa». Se guarda solo en su navegador y no se comparte</td></tr><tr><td>Idioma (<code>hn-lang</code>)</td><td>Recordar el idioma que eligió (PT, ES o EN)</td><td>Solo después de elegir un idioma con los botones PT, ES o EN. Se guarda solo en su navegador y no se comparte</td></tr></tbody>",
       "ck.s3h": "3. Mapa de localización (Google Maps)",
-      "ck.s3p": "La página de contacto puede mostrar un mapa de <strong>Google Maps</strong>. Por respeto a su privacidad, el mapa <strong>no se carga hasta que acepte</strong> las cookies (en el banner o en el botón «Aceptar y ver el mapa»). Mientras no acepte, no se instala ninguna cookie de Google. Al aceptar, Google (Google Ireland Ltd / Google LLC) puede instalar cookies y tratar datos — incluida su dirección IP — conforme a la <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">política de privacidad de Google</a>. Puede retirar el consentimiento en cualquier momento en «Configuración de cookies».",
+      "ck.s3p": "La página de contacto puede mostrar un mapa de <strong>Google Maps</strong>. Por respeto a su privacidad, el mapa <strong>no se carga hasta que pulse el botón «Cargar el mapa»</strong>. Hasta entonces no se hace ninguna petición a Google ni se instala ninguna cookie de Google. Al cargar el mapa, Google (Google Ireland Ltd / Google LLC) puede instalar cookies y tratar datos — incluida su dirección IP — conforme a la <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">política de privacidad de Google</a>. Puede retirar el consentimiento en cualquier momento con el botón «Dejar de cargar el mapa», junto al mapa: el mapa se elimina al instante y la elección se borra de su navegador.",
       "ck.s4h": "4. Enlaces a sitios externos",
       "ck.s4p": "Cuando hace clic en enlaces a WhatsApp, Facebook, Instagram, Google Maps o al Livro de Reclamações, se le redirige a servicios de terceros que tienen sus propias políticas de cookies y de privacidad, de las que HN Transportes no es responsable.",
       "ck.s5h": "5. Cómo gestionar su consentimiento y las cookies",
-      "ck.s5p": "Puede aceptar o rechazar las cookies no esenciales en el banner mostrado en la primera visita y cambiar esa elección cuando quiera a través de «Configuración de cookies», en el pie del sitio. También puede, en cualquier momento, configurar su navegador (Chrome, Safari, Firefox, Edge, etc.) para bloquear o eliminar cookies.",
+      "ck.s5p": "No hay aviso de cookies porque no se guarda nada en su dispositivo antes de una elección suya. Para retirar la autorización del mapa, use el botón «Dejar de cargar el mapa», junto al mapa, en la sección de contacto. Puede cambiar el idioma en cualquier momento con los botones PT, ES o EN. También puede, en cualquier momento, configurar su navegador (Chrome, Safari, Firefox, Edge, etc.) para bloquear o eliminar cookies y datos de sitios.",
       "ck.s6h": "6. Cambios",
       "ck.s6p": "Esta política puede actualizarse siempre que sea necesario. La versión en vigor es la publicada en esta página, identificada por la fecha de última actualización indicada arriba.",
 
@@ -265,7 +264,7 @@
       "tm.crumb": "Términos y Aviso Legal",
       "tm.h1": "Términos y Aviso Legal",
       "tm.sub": "Condiciones de uso de este sitio e identificación legal de la empresa, conforme al Decreto-Lei n.º 7/2004 y al Código das Sociedades Comerciais.",
-      "tm.updated": "Última actualización: 23 de junio de 2026",
+      "tm.updated": "Última actualización: 22 de octubre de 2026",
       "tm.s1h": "1. Identificación",
       "tm.s1p": "El presente sitio es propiedad de:",
       "tm.s1list": "<li><strong>Denominación social:</strong> Hélder Nunes - Transportes, Unipessoal, Lda</li><li><strong>Marca comercial:</strong> HN Transportes</li><li><strong>NIPC / NIF:</strong> 516490141</li><li><strong>Sede:</strong> Rua da Gandara 158, 3700-607 Cesar, Oliveira de Azeméis, Aveiro, Portugal</li><li><strong>Capital social:</strong> 50.000,00 €</li><li><strong>Registro:</strong> Inscrita en la Conservatória do Registo Comercial con el n.º 516490141</li><li><strong>CAE:</strong> 49410 — Transporte de mercancías por carretera</li><li><strong>Actividad:</strong> autorizada y supervisada por el IMT, I.P. (Instituto da Mobilidade e dos Transportes)</li><li><strong>Contacto:</strong> <a href=\"mailto:info@hntransportes.pt\">info@hntransportes.pt</a> · <a href=\"tel:+351913310440\">+351 913 310 440</a> (Llamada a red móvil nacional)</li>",
@@ -274,16 +273,14 @@
       "tm.s3h": "3. Propiedad intelectual",
       "tm.s3p": "El logotipo «HN Transportes», los textos, las imágenes de la flota y los demás contenidos de este sitio son propiedad de Hélder Nunes - Transportes, Unipessoal, Lda o se utilizan con autorización, estando protegidos por la legislación aplicable. No se permite su reproducción, distribución o uso sin autorización previa y por escrito.",
       "tm.s4h": "4. Limitación de responsabilidad",
-      "tm.s4p": "Procuramos mantener la información de este sitio actualizada y correcta. No obstante, HN Transportes no se responsabiliza de eventuales imprecisiones ni de la indisponibilidad temporal del sitio. Las condiciones concretas de cada servicio (plazos, precios y demás términos) prevalecen sobre cualesquiera indicaciones genéricas aquí presentadas.",
+      "tm.s4p": "Procuramos mantener la información de este sitio actualizada y correcta. No obstante, en la medida en que lo permita la ley, HN Transportes no se responsabiliza de eventuales imprecisiones ni de la indisponibilidad temporal del sitio. Las condiciones concretas de cada servicio (plazos, precios y demás términos) prevalecen sobre cualesquiera indicaciones genéricas aquí presentadas.",
       "tm.s5h": "5. Enlaces a sitios de terceros",
       "tm.s5p": "Este sitio contiene enlaces a plataformas de terceros (WhatsApp, Facebook, Instagram, Google Maps y Livro de Reclamações). HN Transportes no controla ni es responsable del contenido o de las políticas de esos sitios.",
       "tm.s6h": "6. Livro de Reclamações",
-      "tm.s6p1": "HN Transportes dispone de Livro de Reclamações. Puede presentar una reclamación a través de la plataforma digital en <a href=\"https://www.livroreclamacoes.pt\" target=\"_blank\" rel=\"noopener\">www.livroreclamacoes.pt</a>.",
+      "tm.s6p1": "HN Transportes dispone de Livro de Reclamações. Puede presentar una reclamación a través de la plataforma digital en <a href=\"https://www.livroreclamacoes.pt/inicio\" target=\"_blank\" rel=\"noopener\">www.livroreclamacoes.pt</a>.",
       "tm.s6p2": "Entidad competente para examinar reclamaciones en el sector del transporte: <strong>AMT — Autoridade da Mobilidade e dos Transportes</strong>, Av. António Augusto de Aguiar, n.º 128, 1050-020 Lisboa — <a href=\"mailto:reclamacoes@amt-autoridade.pt\">reclamacoes@amt-autoridade.pt</a>.",
       "tm.s7h": "7. Resolución alternativa de litigios de consumo",
-      "tm.s7p": "En caso de litigio de consumo, el consumidor puede recurrir a la entidad de Resolución Alternativa de Litigios (RAL) territorialmente competente:",
-      "tm.s7list": "<li><strong>CICAP — Tribunal Arbitral do Consumo</strong> (Centro de Informação de Consumo e Arbitragem do Porto) — <a href=\"https://www.cicap.pt\" target=\"_blank\" rel=\"noopener\">www.cicap.pt</a></li>",
-      "tm.s7p2": "Más información sobre los derechos del consumidor en <a href=\"https://www.consumidor.gov.pt\" target=\"_blank\" rel=\"noopener\">www.consumidor.gov.pt</a>.",
+      "tm.s7ral": "<div class=\"ral\" lang=\"es\"><p>En caso de litigio de consumo, el consumidor puede recurrir a una entidad de resolución alternativa de litigios de consumo. El centro competente es el del domicilio del consumidor o el del lugar de contratación; en los litigios de valor hasta 5 000 €, el arbitraje o la mediación son obligatorios para el proveedor si el consumidor los elige (Ley portuguesa n.º 24/96, art. 14.º, n.º 2; Ley n.º 144/2015, art. 18.º).</p><ul class=\"ral__lista\"><li><strong>CICAP</strong> — Centro de Informação de Consumo e Arbitragem do Porto (Área Metropolitana do Porto): <a href=\"https://cicap.pt/\" target=\"_blank\" rel=\"noopener\">cicap.pt</a></li><li><strong>CACCL</strong> — Centro de Arbitragem de Conflitos de Consumo de Lisboa (Área Metropolitana de Lisboa): <a href=\"https://www.centroarbitragemlisboa.pt/\" target=\"_blank\" rel=\"noopener\">centroarbitragemlisboa.pt</a></li><li><strong>CIAB</strong> — Centro de Informação, Mediação e Arbitragem de Consumo (Tribunal Arbitral de Consumo) (Distritos de Braga e Viana do Castelo e Alto Tâmega e Barroso): <a href=\"https://ciab.pt/\" target=\"_blank\" rel=\"noopener\">ciab.pt</a></li><li><strong>TRIAVE</strong> — Centro de Arbitragem de Conflitos de Consumo do Ave, Tâmega e Sousa (Vale do Ave, Tâmega e Sousa): <a href=\"https://www.triave.pt/\" target=\"_blank\" rel=\"noopener\">triave.pt</a></li><li><strong>CACRC</strong> — Centro de Arbitragem de Conflitos de Consumo da Região de Coimbra (Distrito de Coimbra): <a href=\"https://cacrc.pt/\" target=\"_blank\" rel=\"noopener\">cacrc.pt</a></li><li><strong>CIMAAL</strong> — Centro de Informação, Mediação e Arbitragem do Algarve (Algarve): <a href=\"https://consumoalgarve.pt/\" target=\"_blank\" rel=\"noopener\">consumoalgarve.pt</a></li><li><strong>CACC RAM</strong> — Centro de Arbitragem de Conflitos de Consumo da Região Autónoma da Madeira (Região Autónoma da Madeira): <a href=\"https://www.madeira.gov.pt/cacc/\" target=\"_blank\" rel=\"noopener\">madeira.gov.pt/cacc</a></li><li><strong>CIMARA</strong> — Centro de Informação, Mediação e Arbitragem de Consumo da Região Açores (Região Autónoma dos Açores): <a href=\"https://ocimara.pt/\" target=\"_blank\" rel=\"noopener\">ocimara.pt</a></li><li><strong>CAUAL</strong> — Centro de Arbitragem da Universidade Autónoma de Lisboa (Lisboa (Universidade Autónoma)): <a href=\"https://arbitragem.grupoautonoma.pt/\" target=\"_blank\" rel=\"noopener\">arbitragem.grupoautonoma.pt</a></li><li><strong>CNIACC</strong> — Centro Nacional de Informação e Arbitragem de Conflitos de Consumo (para quien resida fuera de las áreas de los demás centros): <a href=\"https://www.cniacc.pt/\" target=\"_blank\" rel=\"noopener\">cniacc.pt</a></li></ul><p>La lista actualizada de las entidades está en el <a href=\"https://www.consumidor.gov.pt/resolucaoalternativalitigiosdeconsumo/centros-de-arbitragem2/encontrar-a-entidade-competente/lista-de-contactos\" target=\"_blank\" rel=\"noopener\">Portal do Consumidor</a>.</p><p>Si vive en otro país de la Unión Europea, el Centro Europeo del Consumidor de su país le ayuda gratuitamente en los litigios con empresas de otros países: <a href=\"https://commission.europa.eu/live-work-travel-eu/consumer-rights-and-complaints/resolve-your-consumer-complaint/european-consumer-centres-network-ecc-net_pt\" target=\"_blank\" rel=\"noopener\">Red de Centros Europeos del Consumidor</a>.</p></div>",
       "tm.s8h": "8. Ley aplicable y fuero",
       "tm.s8p": "Los presentes términos se rigen por la ley portuguesa. Para la resolución de cualquier litigio derivado del uso de este sitio es competente el fuero de la comarca de la sede de la empresa, sin perjuicio de las normas imperativas aplicables a los consumidores.",
       "nav.servicos": "Servicios",
@@ -296,9 +293,11 @@
       "hero.title": "Su socio de <em>confianza</em> en el transporte de mercancías.",
       "hero.lead": "Recogemos y entregamos su carga allí donde la necesite, con la rapidez que su negocio exige.",
       "hero.ligar": "Llamar",
+      "hero.ligarNota": "«Llamar»: +351 913 310 440 (Llamada a red móvil nacional)",
       "hero.wa": "o hable con nosotros por",
       "hero.panel.eyebrow": "Respuesta inmediata",
       "phone.note": "(Llamada a red móvil nacional)",
+      "livro.sr": " (se abre en una ventana nueva)",
       "hero.img.alt": "Furgoneta blanca de HN Transportes estacionada junto a un faro al atardecer",
 
       "serv.eyebrow": "Qué hacemos",
@@ -352,8 +351,9 @@
       "con.h2": "Hablamos con usted de inmediato",
       "con.sub": "Elija el canal que prefiera. Respondemos a cualquier hora, todos los días.",
       "map.title": "Dónde estamos",
-      "map.note": "Para mostrar el mapa usamos Google Maps, que instala cookies. Acepte para verlo aquí.",
-      "map.accept": "Aceptar y ver el mapa",
+      "map.note": "El mapa es de Google y solo se carga después de pulsar el botón. En ese momento Google recibe su dirección IP y puede guardar cookies en su dispositivo.",
+      "map.accept": "Cargar el mapa",
+      "map.retirar": "Dejar de cargar el mapa",
       "map.hint": "También puede <a href=\"https://www.google.com/maps/search/?api=1&query=Rua%20da%20Gandara%20158%203700-607%20Cesar%20Oliveira%20de%20Azem%C3%A9is\" target=\"_blank\" rel=\"noopener\">abrirlo en Google Maps</a>.",
       "ch.tel": "Teléfono",
       "ch.email": "Email",
@@ -370,9 +370,6 @@
       "footer.termos": "Términos y Aviso Legal",
       "footer.cookieset": "Configuración de cookies",
 
-      "cookie.txt": "Utilizamos cookies de <strong>Google Maps</strong> únicamente para mostrar el mapa de nuestra ubicación. Puede aceptar o rechazar — el sitio funciona igual. Más información en la <a href=\"cookies.html\">Política de Cookies</a>.",
-      "cookie.reject": "Rechazar",
-      "cookie.accept": "Aceptar",
 
       "a11y.lightbox": "Visor de imágenes",
       "a11y.close": "Cerrar",
@@ -399,7 +396,7 @@
       "pp.crumb": "Privacy Policy",
       "pp.h1": "Privacy Policy",
       "pp.sub": "How HN Transportes collects, uses and protects your personal data, in accordance with the General Data Protection Regulation (RGPD / GDPR).",
-      "pp.updated": "Last updated: 25 June 2026",
+      "pp.updated": "Last updated: 22 October 2026",
       "pp.s1h": "1. Data controller",
       "pp.s1p1": "The controller of your personal data is:",
       "pp.s1list": "<li><strong>Hélder Nunes - Transportes, Unipessoal, Lda</strong> (brand «HN Transportes»)</li><li>NIPC: 516490141</li><li>Registered office: Rua da Gandara 158, 3700-607 Cesar, Oliveira de Azeméis, Aveiro</li><li>Email: <a href=\"mailto:info@hntransportes.pt\">info@hntransportes.pt</a> · Phone: <a href=\"tel:+351913310440\">+351 913 310 440</a> (Call to a national mobile network)</li>",
@@ -412,9 +409,9 @@
       "pp.s4h": "4. Retention period",
       "pp.s4p": "Contact data are kept only for as long as necessary to respond to your request and manage any business relationship. Data associated with services provided and with billing are kept for the applicable legal periods (in particular tax and accounting periods).",
       "pp.s5h": "5. Recipients and processors",
-      "pp.s5p": "We do not sell or share your data with third parties for marketing purposes. Data may be processed by service providers acting on our behalf, in particular the site hosting service. When you contact us via WhatsApp, the communication is also processed by Meta Platforms, under that platform's own privacy policy. The contact page may display Google Maps; the map is only loaded if you accept cookies, after which Google (Google Ireland Ltd / Google LLC) processes data, including your IP address, to display the map.",
+      "pp.s5p": "We do not sell or share your data with third parties for marketing purposes. Data may be processed by service providers acting on our behalf, in particular the site hosting service. When you contact us via WhatsApp, the communication is also processed by Meta Platforms, under that platform's own privacy policy. The contact page may display Google Maps; the map is only loaded if you press «Load the map», after which Google (Google Ireland Ltd / Google LLC) processes data, including your IP address, to display the map. You can withdraw it at any time with «Stop loading the map».",
       "pp.s6h": "6. International transfers",
-      "pp.s6p": "The site is hosted on <strong>GitHub Pages</strong> (GitHub, Inc., USA), so technical access data may be processed outside the European Economic Area, under appropriate safeguards provided for in the RGPD (in particular standard contractual clauses and/or applicable adequacy mechanisms). The same applies to contact via WhatsApp (Meta Platforms) and, if you accept the map cookies, to Google Maps (Google), with transfer to the United States under appropriate safeguards.",
+      "pp.s6p": "The site is hosted on <strong>GitHub Pages</strong> (GitHub, Inc., USA), so technical access data may be processed outside the European Economic Area, under appropriate safeguards provided for in the RGPD (in particular standard contractual clauses and/or applicable adequacy mechanisms). The same applies to contact via WhatsApp (Meta Platforms) and, if you load the map, to Google Maps (Google), with transfer to the United States under appropriate safeguards.",
       "pp.s7h": "7. Your rights",
       "pp.s7p": "As the data subject, you may exercise, at any time, the rights of <strong>access, rectification, erasure, restriction of processing, portability and objection</strong>. To do so, contact us at <a href=\"mailto:info@hntransportes.pt\">info@hntransportes.pt</a>. Your identity may need to be confirmed before we act on the request.",
       "pp.s8h": "8. Complaint to the supervisory authority",
@@ -431,19 +428,19 @@
       "ck.crumb": "Cookie Policy",
       "ck.h1": "Cookie Policy",
       "ck.sub": "Information about the use of cookies on this site, under Article 5 of Lei n.º 41/2004.",
-      "ck.updated": "Last updated: 25 June 2026",
+      "ck.updated": "Last updated: 22 October 2026",
       "ck.s1h": "1. What cookies are",
       "ck.s1p": "Cookies are small text files that a site may store on your device when you visit it. They are used, for example, to remember preferences, collect usage statistics or display targeted advertising.",
-      "ck.callout": "<strong>We only use non-essential cookies with your consent.</strong> By default, no third-party cookie is installed. The only non-essential cookie comes from <strong>Google Maps</strong> and is only loaded if you accept it in the cookie banner. You can change your choice at any time under «Cookie settings» in the footer.",
+      "ck.callout": "<strong>We only store anything on your device after you make a choice.</strong> By default no cookie is installed and no third-party content is loaded, which is why this site has no cookie banner. The only third-party content is the <strong>Google Maps</strong> map, which only loads after you press «Load the map» and which you can withdraw at any time with «Stop loading the map», next to the map itself.",
       "ck.s2h": "2. Which cookies we use",
       "ck.s2p": "We do not use analytics, advertising or social media cookies. Fonts are hosted on the site itself and there are no tracking pixels. The only processing that depends on cookies is the location map:",
-      "ck.s2table": "<thead><tr><th>Service</th><th>Purpose</th><th>When</th></tr></thead><tbody><tr><td>Google Maps (Google)</td><td>Display the interactive map of our location</td><td>Only after accepting the cookie banner</td></tr><tr><td>Consent preference</td><td>Remember your choice (accept/reject) so we don't ask again</td><td>Essential — stored only in your browser, not shared</td></tr></tbody>",
+      "ck.s2table": "<thead><tr><th>Service</th><th>Purpose</th><th>When</th></tr></thead><tbody><tr><td>Google Maps (Google)</td><td>Display the interactive map of our location</td><td>Only after you press «Load the map»</td></tr><tr><td>Map permission (<code>hn-mapa-autorizado</code>)</td><td>Remember that you allowed the map, so it loads on later visits</td><td>Only after you press «Load the map»; deleted with «Stop loading the map». Stored only in your browser and not shared</td></tr><tr><td>Language (<code>hn-lang</code>)</td><td>Remember the language you chose (PT, ES or EN)</td><td>Only after you choose a language with the PT, ES or EN buttons. Stored only in your browser and not shared</td></tr></tbody>",
       "ck.s3h": "3. Location map (Google Maps)",
-      "ck.s3p": "The contact page may display a <strong>Google Maps</strong> map. Out of respect for your privacy, the map <strong>is not loaded until you accept</strong> cookies (in the banner or via the «Accept and view the map» button). Until you accept, no Google cookie is installed. When you accept, Google (Google Ireland Ltd / Google LLC) may install cookies and process data — including your IP address — under <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google's privacy policy</a>. You can withdraw consent at any time under «Cookie settings».",
+      "ck.s3p": "The contact page may display a <strong>Google Maps</strong> map. Out of respect for your privacy, the map <strong>is not loaded until you press the «Load the map» button</strong>. Until then, no request is made to Google and no Google cookie is installed. When you load the map, Google (Google Ireland Ltd / Google LLC) may install cookies and process data — including your IP address — under <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google's privacy policy</a>. You can withdraw consent at any time with the «Stop loading the map» button next to the map: the map is removed immediately and the choice is deleted from your browser.",
       "ck.s4h": "4. Links to external sites",
       "ck.s4p": "When you click links to WhatsApp, Facebook, Instagram, Google Maps or the Livro de Reclamações, you are directed to third-party services that have their own cookie and privacy policies, for which HN Transportes is not responsible.",
       "ck.s5h": "5. How to manage your consent and cookies",
-      "ck.s5p": "You can accept or reject non-essential cookies in the banner shown on your first visit and change that choice whenever you wish via «Cookie settings» in the site footer. You can also, at any time, configure your browser (Chrome, Safari, Firefox, Edge, etc.) to block or delete cookies.",
+      "ck.s5p": "There is no cookie banner because nothing is stored on your device before you make a choice. To withdraw your permission for the map, use the «Stop loading the map» button next to the map, in the contact section. You can change the language at any time with the PT, ES or EN buttons. You can also, at any time, configure your browser (Chrome, Safari, Firefox, Edge, etc.) to block or delete cookies and site data.",
       "ck.s6h": "6. Changes",
       "ck.s6p": "This policy may be updated whenever necessary. The version in force is the one published on this page, identified by the last updated date shown above.",
 
@@ -452,7 +449,7 @@
       "tm.crumb": "Terms & Legal Notice",
       "tm.h1": "Terms & Legal Notice",
       "tm.sub": "Conditions of use of this site and legal identification of the company, under Decreto-Lei n.º 7/2004 and the Código das Sociedades Comerciais.",
-      "tm.updated": "Last updated: 23 June 2026",
+      "tm.updated": "Last updated: 22 October 2026",
       "tm.s1h": "1. Identification",
       "tm.s1p": "This site is owned by:",
       "tm.s1list": "<li><strong>Company name:</strong> Hélder Nunes - Transportes, Unipessoal, Lda</li><li><strong>Trade name:</strong> HN Transportes</li><li><strong>NIPC / NIF:</strong> 516490141</li><li><strong>Registered office:</strong> Rua da Gandara 158, 3700-607 Cesar, Oliveira de Azeméis, Aveiro, Portugal</li><li><strong>Share capital:</strong> €50,000.00</li><li><strong>Registration:</strong> Registered at the Conservatória do Registo Comercial under no. 516490141</li><li><strong>CAE:</strong> 49410 — Road freight transport</li><li><strong>Activity:</strong> licensed and supervised by IMT, I.P. (Instituto da Mobilidade e dos Transportes)</li><li><strong>Contact:</strong> <a href=\"mailto:info@hntransportes.pt\">info@hntransportes.pt</a> · <a href=\"tel:+351913310440\">+351 913 310 440</a> (Call to a national mobile network)</li>",
@@ -461,16 +458,14 @@
       "tm.s3h": "3. Intellectual property",
       "tm.s3p": "The «HN Transportes» logo, the texts, the fleet images and the other content of this site are the property of Hélder Nunes - Transportes, Unipessoal, Lda or are used with authorisation, being protected by applicable law. Their reproduction, distribution or use is not permitted without prior written authorisation.",
       "tm.s4h": "4. Limitation of liability",
-      "tm.s4p": "We strive to keep the information on this site up to date and accurate. However, HN Transportes is not liable for any inaccuracies or for the temporary unavailability of the site. The specific conditions of each service (deadlines, prices and other terms) prevail over any generic indications presented here.",
+      "tm.s4p": "We strive to keep the information on this site up to date and accurate. However, to the extent permitted by law, HN Transportes is not liable for any inaccuracies or for the temporary unavailability of the site. The specific conditions of each service (deadlines, prices and other terms) prevail over any generic indications presented here.",
       "tm.s5h": "5. Links to third-party sites",
       "tm.s5p": "This site contains links to third-party platforms (WhatsApp, Facebook, Instagram, Google Maps and the Livro de Reclamações). HN Transportes does not control and is not responsible for the content or policies of those sites.",
       "tm.s6h": "6. Livro de Reclamações",
-      "tm.s6p1": "HN Transportes has a Livro de Reclamações (complaints book). You can file a complaint through the digital platform at <a href=\"https://www.livroreclamacoes.pt\" target=\"_blank\" rel=\"noopener\">www.livroreclamacoes.pt</a>.",
+      "tm.s6p1": "HN Transportes has a Livro de Reclamações (complaints book). You can file a complaint through the digital platform at <a href=\"https://www.livroreclamacoes.pt/inicio\" target=\"_blank\" rel=\"noopener\">www.livroreclamacoes.pt</a>.",
       "tm.s6p2": "Authority competent to examine complaints in the transport sector: <strong>AMT — Autoridade da Mobilidade e dos Transportes</strong>, Av. António Augusto de Aguiar, n.º 128, 1050-020 Lisboa — <a href=\"mailto:reclamacoes@amt-autoridade.pt\">reclamacoes@amt-autoridade.pt</a>.",
       "tm.s7h": "7. Alternative consumer dispute resolution",
-      "tm.s7p": "In the event of a consumer dispute, the consumer may turn to the territorially competent Alternative Dispute Resolution (RAL) entity:",
-      "tm.s7list": "<li><strong>CICAP — Tribunal Arbitral do Consumo</strong> (Centro de Informação de Consumo e Arbitragem do Porto) — <a href=\"https://www.cicap.pt\" target=\"_blank\" rel=\"noopener\">www.cicap.pt</a></li>",
-      "tm.s7p2": "More information on consumer rights at <a href=\"https://www.consumidor.gov.pt\" target=\"_blank\" rel=\"noopener\">www.consumidor.gov.pt</a>.",
+      "tm.s7ral": "<div class=\"ral\" lang=\"en\"><p>In the event of a consumer dispute, the consumer may turn to an alternative consumer dispute resolution entity. The competent centre is the one for the consumer&#39;s domicile or for the place where the contract was made; in disputes worth up to €5,000, arbitration or mediation is mandatory for the trader if the consumer chooses it (Portuguese Law no. 24/96, art. 14(2); Law no. 144/2015, art. 18).</p><ul class=\"ral__lista\"><li><strong>CICAP</strong> — Centro de Informação de Consumo e Arbitragem do Porto (Área Metropolitana do Porto): <a href=\"https://cicap.pt/\" target=\"_blank\" rel=\"noopener\">cicap.pt</a></li><li><strong>CACCL</strong> — Centro de Arbitragem de Conflitos de Consumo de Lisboa (Área Metropolitana de Lisboa): <a href=\"https://www.centroarbitragemlisboa.pt/\" target=\"_blank\" rel=\"noopener\">centroarbitragemlisboa.pt</a></li><li><strong>CIAB</strong> — Centro de Informação, Mediação e Arbitragem de Consumo (Tribunal Arbitral de Consumo) (Distritos de Braga e Viana do Castelo e Alto Tâmega e Barroso): <a href=\"https://ciab.pt/\" target=\"_blank\" rel=\"noopener\">ciab.pt</a></li><li><strong>TRIAVE</strong> — Centro de Arbitragem de Conflitos de Consumo do Ave, Tâmega e Sousa (Vale do Ave, Tâmega e Sousa): <a href=\"https://www.triave.pt/\" target=\"_blank\" rel=\"noopener\">triave.pt</a></li><li><strong>CACRC</strong> — Centro de Arbitragem de Conflitos de Consumo da Região de Coimbra (Distrito de Coimbra): <a href=\"https://cacrc.pt/\" target=\"_blank\" rel=\"noopener\">cacrc.pt</a></li><li><strong>CIMAAL</strong> — Centro de Informação, Mediação e Arbitragem do Algarve (Algarve): <a href=\"https://consumoalgarve.pt/\" target=\"_blank\" rel=\"noopener\">consumoalgarve.pt</a></li><li><strong>CACC RAM</strong> — Centro de Arbitragem de Conflitos de Consumo da Região Autónoma da Madeira (Região Autónoma da Madeira): <a href=\"https://www.madeira.gov.pt/cacc/\" target=\"_blank\" rel=\"noopener\">madeira.gov.pt/cacc</a></li><li><strong>CIMARA</strong> — Centro de Informação, Mediação e Arbitragem de Consumo da Região Açores (Região Autónoma dos Açores): <a href=\"https://ocimara.pt/\" target=\"_blank\" rel=\"noopener\">ocimara.pt</a></li><li><strong>CAUAL</strong> — Centro de Arbitragem da Universidade Autónoma de Lisboa (Lisboa (Universidade Autónoma)): <a href=\"https://arbitragem.grupoautonoma.pt/\" target=\"_blank\" rel=\"noopener\">arbitragem.grupoautonoma.pt</a></li><li><strong>CNIACC</strong> — Centro Nacional de Informação e Arbitragem de Conflitos de Consumo (for those living outside the areas of the other centres): <a href=\"https://www.cniacc.pt/\" target=\"_blank\" rel=\"noopener\">cniacc.pt</a></li></ul><p>The up-to-date list of these entities is on the <a href=\"https://www.consumidor.gov.pt/resolucaoalternativalitigiosdeconsumo/centros-de-arbitragem2/encontrar-a-entidade-competente/lista-de-contactos\" target=\"_blank\" rel=\"noopener\">Portal do Consumidor (Portuguese consumer portal)</a>.</p><p>If you live in another European Union country, the European Consumer Centre in your country helps free of charge with disputes with businesses in other countries: <a href=\"https://commission.europa.eu/live-work-travel-eu/consumer-rights-and-complaints/resolve-your-consumer-complaint/european-consumer-centres-network-ecc-net_pt\" target=\"_blank\" rel=\"noopener\">European Consumer Centres Network</a>.</p></div>",
       "tm.s8h": "8. Applicable law and jurisdiction",
       "tm.s8p": "These terms are governed by Portuguese law. For the resolution of any dispute arising from the use of this site, the courts of the district of the company's registered office shall have jurisdiction, without prejudice to the mandatory rules applicable to consumers.",
       "nav.servicos": "Services",
@@ -483,9 +478,11 @@
       "hero.title": "Your <em>trusted</em> partner in freight transport.",
       "hero.lead": "We pick up and deliver your cargo wherever you need it, with the speed your business demands.",
       "hero.ligar": "Call",
+      "hero.ligarNota": "“Call”: +351 913 310 440 (Call to a national mobile network)",
       "hero.wa": "or message us on",
       "hero.panel.eyebrow": "Immediate response",
       "phone.note": "(Call to a national mobile network)",
+      "livro.sr": " (opens in a new window)",
       "hero.img.alt": "White HN Transportes van parked next to a lighthouse at sunset",
 
       "serv.eyebrow": "What we do",
@@ -539,8 +536,9 @@
       "con.h2": "Let's talk right away",
       "con.sub": "Choose your preferred channel. We answer any time, every day.",
       "map.title": "Where we are",
-      "map.note": "We use Google Maps to show the map, which sets cookies. Accept to view it here.",
-      "map.accept": "Accept and view the map",
+      "map.note": "The map is provided by Google and only loads after you press the button. Google then receives your IP address and may store cookies on your device.",
+      "map.accept": "Load the map",
+      "map.retirar": "Stop loading the map",
       "map.hint": "Alternatively, <a href=\"https://www.google.com/maps/search/?api=1&query=Rua%20da%20Gandara%20158%203700-607%20Cesar%20Oliveira%20de%20Azem%C3%A9is\" target=\"_blank\" rel=\"noopener\">open in Google Maps</a>.",
       "ch.tel": "Phone",
       "ch.email": "Email",
@@ -557,9 +555,6 @@
       "footer.termos": "Terms & Legal Notice",
       "footer.cookieset": "Cookie settings",
 
-      "cookie.txt": "We use <strong>Google Maps</strong> cookies only to show the map of our location. You can accept or reject — the site works either way. Learn more in our <a href=\"cookies.html\">Cookie Policy</a>.",
-      "cookie.reject": "Reject",
-      "cookie.accept": "Accept",
 
       "a11y.lightbox": "Image viewer",
       "a11y.close": "Close",
@@ -595,7 +590,7 @@
     if (/<[a-z!/]/i.test(v)) el.innerHTML = v; else el.textContent = v;
   }
 
-  function apply(lang) {
+  function apply(lang, escolhida) {
     if (SUPPORTED.indexOf(lang) === -1) lang = "pt";
     document.documentElement.setAttribute("lang", LOCALE[lang]);
 
@@ -622,14 +617,14 @@
       b.setAttribute("aria-pressed", on ? "true" : "false");
     });
 
-    setStored(lang);
+    if (escolhida) setStored(lang);
     document.documentElement.classList.remove("i18n-pending");
   }
 
   function init() {
     apply(detect());
     document.querySelectorAll(".langswitch [data-lang]").forEach(function (b) {
-      b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
+      b.addEventListener("click", function () { apply(b.getAttribute("data-lang"), true); });
     });
   }
 

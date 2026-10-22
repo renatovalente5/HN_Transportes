@@ -50,7 +50,22 @@
   <link rel="manifest" href="site.webmanifest" />
 
   <link rel="preload" href="assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="assets/css/styles.css?v=28" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=29" />
+  <!-- legal-comum:livro-css v1.0.0 -->
+  <style>
+  .lr-botao{display:inline-flex;align-items:center;gap:.5em;min-height:44px;min-width:44px;padding:.5em 1em;border:1px solid transparent;border-radius:.5em;background:#af272f;color:#ffffff;font-family:inherit;font-size:max(14px,.95rem);font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;cursor:pointer}
+  .lr-botao:hover,.lr-botao:focus-visible{text-decoration:underline;text-underline-offset:.15em}
+  .lr-botao:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+  .lr-botao svg{width:1.5em;height:1.5em;flex:none}
+  .lr-botao--vermelho{background:#af272f;color:#ffffff;border-color:transparent}
+  .lr-botao--azul{background:#005a9c;color:#ffffff;border-color:transparent}
+  .lr-botao--preto{background:#111111;color:#ffffff;border-color:transparent}
+  .lr-botao--branco{background:#ffffff;color:#111111;border-color:#111111}
+  .lr-texto{font-weight:700;color:inherit;text-decoration:underline;text-underline-offset:.15em}
+  .lr-texto svg{width:1.2em;height:1.2em;vertical-align:-.2em;margin-right:.3em}
+  .lr-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  </style>
+  <!-- /legal-comum:livro-css -->
 
   <!-- Dados estruturados -->
   <script type="application/ld+json">
@@ -144,6 +159,7 @@
               <span data-i18n="hero.ligar">Ligar</span>
             </a>
           </div>
+          <p class="hero__callnote" data-i18n="hero.ligarNota">«Ligar»: +351 913 310 440 (Chamada para a rede móvel nacional)</p>
           <p class="hero__wa"><span data-i18n="hero.wa">ou fale connosco no</span> <a href="https://wa.me/351913310440" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.2.5.2.5.4.1.1.1.6-.1 1.1Z"/></svg> WhatsApp</a></p>
         </div>
 
@@ -300,18 +316,19 @@
           <p data-i18n="con.sub">Escolha o canal que preferir. Respondemos a qualquer hora, todos os dias.</p>
         </div>
         <div class="contact">
-          <!-- ESQUERDA: mapa quadrado (carrega após consentimento de cookies) -->
+          <!-- ESQUERDA: mapa quadrado atrás de uma fachada: só carrega depois do clique em «Carregar o mapa» -->
           <div class="contact__map reveal" id="map-embed" data-maps="https://www.google.com/maps?q=Rua+da+Gandara+158,+3700-607+Cesar,+Oliveira+de+Azem%C3%A9is&amp;output=embed">
             <div class="map-placeholder" id="map-placeholder">
               <span class="map-placeholder__grid" aria-hidden="true"></span>
               <span class="map-placeholder__pin" aria-hidden="true"></span>
               <div class="map-placeholder__body">
                 <strong data-i18n="map.title">Onde estamos</strong>
-                <small data-i18n="map.note">Para mostrar o mapa usamos o Google Maps, que instala cookies. Aceite para o ver aqui.</small>
-                <button type="button" class="btn btn--accent" id="map-accept" data-i18n="map.accept">Aceitar e ver o mapa</button>
+                <small data-i18n="map.note">O mapa é da Google e só é carregado depois de carregar no botão. Nessa altura a Google recebe o seu endereço IP e pode gravar cookies no seu aparelho.</small>
+                <button type="button" class="btn btn--accent" id="map-accept" data-i18n="map.accept">Carregar o mapa</button>
                 <span class="map-placeholder__hint" data-i18n="map.hint">Em alternativa, <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20da%20Gandara%20158%203700-607%20Cesar%20Oliveira%20de%20Azem%C3%A9is" target="_blank" rel="noopener">abra no Google Maps</a>.</span>
               </div>
             </div>
+            <button type="button" class="btn map-retirar" id="map-retirar" data-i18n="map.retirar" hidden>Deixar de carregar o mapa</button>
           </div>
 
           <!-- DIREITA: cards (Telefone, Email, Morada) -->
@@ -344,6 +361,11 @@
             </address>
           </div>
         </div>
+        <p class="contact__livro reveal">
+          <!-- legal-comum:livro v1.0.0 -->
+          <a class="lr-botao" href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener" lang="pt"><svg class="lr-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="currentColor"><path fill-rule="evenodd" d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm1 0v20h1.2V2H7Zm3.8 5.2h5.4a.8.8 0 0 1 0 1.6h-5.4a.8.8 0 0 1 0-1.6Zm0 4h5.4a.8.8 0 0 1 0 1.6h-5.4a.8.8 0 0 1 0-1.6Zm0 4h3.4a.8.8 0 0 1 0 1.6h-3.4a.8.8 0 0 1 0-1.6Z"/></svg><span class="lr-botao__texto">Livro de Reclamações</span><span class="lr-sr" data-i18n="livro.sr"> (abre numa nova janela)</span></a>
+          <!-- /legal-comum:livro -->
+        </p>
       </div>
     </section>
   </main>
@@ -373,11 +395,13 @@
 
       <div class="footer__bottom">
         <nav class="footer__links" aria-label="Ligações legais">
-          <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a>
+          <!-- legal-comum:livro v1.0.0 -->
+          <a class="lr-botao" href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener" lang="pt"><svg class="lr-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="currentColor"><path fill-rule="evenodd" d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm1 0v20h1.2V2H7Zm3.8 5.2h5.4a.8.8 0 0 1 0 1.6h-5.4a.8.8 0 0 1 0-1.6Zm0 4h5.4a.8.8 0 0 1 0 1.6h-5.4a.8.8 0 0 1 0-1.6Zm0 4h3.4a.8.8 0 0 1 0 1.6h-3.4a.8.8 0 0 1 0-1.6Z"/></svg><span class="lr-botao__texto">Livro de Reclamações</span><span class="lr-sr" data-i18n="livro.sr"> (abre numa nova janela)</span></a>
+          <!-- /legal-comum:livro -->
           <a href="privacidade.html" data-i18n="footer.priv">Política de Privacidade</a>
           <a href="cookies.html" data-i18n="footer.cookies">Política de Cookies</a>
           <a href="termos.html" data-i18n="footer.termos">Termos e Aviso Legal</a>
-          <button type="button" class="cookie-settings" id="cookie-settings" data-i18n="footer.cookieset">Definições de cookies</button>
+          <a href="cookies.html#definicoes" data-i18n="footer.cookieset">Definições de cookies</a>
         </nav>
         <hr class="footer__rule" />
         <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
@@ -385,14 +409,6 @@
     </div>
   </footer>
 
-  <!-- Banner de consentimento de cookies (RGPD / Lei 41/2004) -->
-  <div class="cookiebar" id="cookiebar" role="region" aria-label="Consentimento de cookies" hidden>
-    <p class="cookiebar__txt" data-i18n="cookie.txt">Utilizamos cookies do <strong>Google Maps</strong> apenas para mostrar o mapa da nossa localização. Pode aceitar ou rejeitar — o site funciona na mesma. Saiba mais na <a href="cookies.html">Política de Cookies</a>.</p>
-    <div class="cookiebar__actions">
-      <button type="button" class="btn btn--outline-light" id="cookie-reject" data-i18n="cookie.reject">Rejeitar</button>
-      <button type="button" class="btn btn--accent" id="cookie-accept" data-i18n="cookie.accept">Aceitar</button>
-    </div>
-  </div>
 
   <!-- Ações flutuantes -->
   <div class="fab">
@@ -410,7 +426,7 @@
     <button class="lightbox__btn lightbox__next" id="lb-next" data-i18n-aria="a11y.next" aria-label="Seguinte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
   </div>
 
-  <script src="assets/js/i18n.js?v=1" defer></script>
-  <script src="assets/js/main.js?v=6" defer></script>
+  <script src="assets/js/i18n.js?v=2" defer></script>
+  <script src="assets/js/main.js?v=7" defer></script>
 </body>
 </html>

@@ -322,13 +322,6 @@ a.ccard__val:hover { color: var(--accent-text); }
 .ccard__dir svg { width: 15px; height: 15px; }
 .ccard__dir:hover { border-color: var(--accent); color: var(--accent-text); background: var(--accent-soft); }
 
-.cookiebar { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 130; max-width: 880px; margin-inline: auto; background: var(--dark); color: #fff; border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 14px 28px; flex-wrap: wrap; }
-.cookiebar__txt { font-size: .92rem; color: var(--muted-dark); margin: 0; max-width: 56ch; }
-.cookiebar__txt a { color: #fff; text-decoration: underline; }
-.cookiebar__actions { display: flex; gap: 10px; flex: none; }
-.cookiebar .btn { padding: 11px 20px; }
-.cookie-settings { background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; font-size: .85rem; }
-.cookie-settings:hover { color: #fff; }
 [hidden] { display: none !important; }
 
 /* ---------- Footer ---------- */
@@ -457,3 +450,14 @@ a.ccard__val:hover { color: var(--accent-text); }
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- Grupo 1 da auditoria legal (out 2026) ---------- */
+/* Botão do Livro de Reclamações (legal-comum): não herda o tamanho nem a cor das ligações legais do rodapé */
+.footer__bottom a.lr-botao, .footer__bottom a.lr-botao:hover { font-size: max(14px, .95rem); color: #fff; }
+/* O separador «|» das ligações legais ficava dentro do botão vermelho: o botão já se distingue sozinho */
+.footer__links > a.lr-botao::after { content: none; }
+.contact__livro { margin: clamp(20px, 3vw, 28px) 0 0; text-align: center; }
+/* Nota do custo da chamada junto ao botão «Ligar» (DL 59/2021, art. 3.º) */
+.hero__callnote { margin-top: 10px; font-size: .8rem; color: var(--muted); }
+/* Mapa atrás de uma fachada: «Deixar de carregar o mapa» por cima do mapa, só com o mapa carregado */
+.map-retirar { position: absolute; right: 12px; bottom: 12px; z-index: 2; padding: 10px 16px; font-size: .85rem; --bg-btn: rgba(15, 17, 22, .9); --fg-btn: #fff; border-color: rgba(255, 255, 255, .34); }

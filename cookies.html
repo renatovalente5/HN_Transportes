@@ -28,7 +28,22 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png" />
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=28" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=29" />
+  <!-- legal-comum:livro-css v1.0.0 -->
+  <style>
+  .lr-botao{display:inline-flex;align-items:center;gap:.5em;min-height:44px;min-width:44px;padding:.5em 1em;border:1px solid transparent;border-radius:.5em;background:#af272f;color:#ffffff;font-family:inherit;font-size:max(14px,.95rem);font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;cursor:pointer}
+  .lr-botao:hover,.lr-botao:focus-visible{text-decoration:underline;text-underline-offset:.15em}
+  .lr-botao:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+  .lr-botao svg{width:1.5em;height:1.5em;flex:none}
+  .lr-botao--vermelho{background:#af272f;color:#ffffff;border-color:transparent}
+  .lr-botao--azul{background:#005a9c;color:#ffffff;border-color:transparent}
+  .lr-botao--preto{background:#111111;color:#ffffff;border-color:transparent}
+  .lr-botao--branco{background:#ffffff;color:#111111;border-color:#111111}
+  .lr-texto{font-weight:700;color:inherit;text-decoration:underline;text-underline-offset:.15em}
+  .lr-texto svg{width:1.2em;height:1.2em;vertical-align:-.2em;margin-right:.3em}
+  .lr-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  </style>
+  <!-- /legal-comum:livro-css -->
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="a11y.skip">Saltar para o conteúdo</a>
@@ -74,34 +89,28 @@
 
     <div class="container">
       <article class="prose">
-        <p class="updated" data-i18n="ck.updated">Última atualização: 25 de junho de 2026</p>
+        <p class="updated" data-i18n="ck.updated">Última atualização: 22 de outubro de 2026</p>
         <p class="legal-note" data-i18n="legal.prevail">Em caso de divergência entre versões, prevalece a versão em português.</p>
 
         <h2 data-i18n="ck.s1h">1. O que são cookies</h2>
         <p data-i18n="ck.s1p">Os cookies são pequenos ficheiros de texto que um sítio pode guardar no seu dispositivo quando o visita. Servem, por exemplo, para recordar preferências, recolher estatísticas de utilização ou apresentar publicidade direcionada.</p>
 
         <div class="callout">
-          <p style="margin:0" data-i18n="ck.callout"><strong>Só utilizamos cookies não essenciais com o seu consentimento.</strong> Por defeito, não é instalado qualquer cookie de terceiros. O único cookie não essencial provém do <strong>Google Maps</strong> e só é carregado se aceitar no banner de cookies. Pode alterar a sua escolha a qualquer momento em «Definições de cookies», no rodapé.</p>
+          <p style="margin:0" data-i18n="ck.callout"><strong>Só gravamos alguma coisa no seu aparelho depois de uma escolha sua.</strong> Por defeito, não é instalado qualquer cookie e nenhum conteúdo de terceiros é carregado, por isso este sítio não tem aviso de cookies. O único conteúdo de terceiros é o mapa do <strong>Google Maps</strong>, que só é carregado depois de carregar em «Carregar o mapa» e que pode retirar a qualquer momento em «Deixar de carregar o mapa», junto ao próprio mapa.</p>
         </div>
 
         <h2 data-i18n="ck.s2h">2. Que cookies utilizamos</h2>
         <p data-i18n="ck.s2p">Não usamos cookies de análise (analytics), de publicidade nem de redes sociais. As tipografias são alojadas no próprio sítio e não existem píxeis de rastreamento. O único tratamento que depende de cookies é o mapa de localização:</p>
-        <table data-i18n="ck.s2table">
-          <thead><tr><th>Serviço</th><th>Finalidade</th><th>Quando</th></tr></thead>
-          <tbody>
-            <tr><td>Google Maps (Google)</td><td>Apresentar o mapa interativo da nossa localização</td><td>Apenas após aceitar o banner de cookies</td></tr>
-            <tr><td>Preferência de consentimento</td><td>Recordar a sua escolha (aceitar/rejeitar) para não voltar a perguntar</td><td>Essencial — guardado apenas no seu navegador, não é partilhado</td></tr>
-          </tbody>
-        </table>
+        <table data-i18n="ck.s2table"><thead><tr><th>Serviço</th><th>Finalidade</th><th>Quando</th></tr></thead><tbody><tr><td>Google Maps (Google)</td><td>Apresentar o mapa interativo da nossa localização</td><td>Só depois de carregar em «Carregar o mapa»</td></tr><tr><td>Autorização do mapa (<code>hn-mapa-autorizado</code>)</td><td>Recordar que autorizou o mapa, para o carregar nas visitas seguintes</td><td>Só depois de carregar em «Carregar o mapa»; é apagada com «Deixar de carregar o mapa». Fica apenas no seu navegador e não é partilhada</td></tr><tr><td>Língua (<code>hn-lang</code>)</td><td>Recordar a língua que escolheu (PT, ES ou EN)</td><td>Só depois de escolher uma língua nos botões PT, ES ou EN. Fica apenas no seu navegador e não é partilhada</td></tr></tbody></table>
 
         <h2 data-i18n="ck.s3h">3. Mapa de localização (Google Maps)</h2>
-        <p data-i18n="ck.s3p">A página de contactos pode apresentar um mapa do <strong>Google Maps</strong>. Por respeito pela sua privacidade, o mapa <strong>não é carregado até que aceite</strong> os cookies (no banner ou no botão «Aceitar e ver o mapa»). Enquanto não aceitar, nenhum cookie do Google é instalado. Ao aceitar, o Google (Google Ireland Ltd / Google LLC) pode instalar cookies e tratar dados — incluindo o seu endereço IP — nos termos da <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidade do Google</a>. Pode retirar o consentimento a qualquer momento em «Definições de cookies».</p>
+        <p data-i18n="ck.s3p">A página de contactos pode apresentar um mapa do <strong>Google Maps</strong>. Por respeito pela sua privacidade, o mapa <strong>não é carregado até carregar no botão «Carregar o mapa»</strong>. Até lá, não é feito nenhum pedido à Google nem instalado nenhum cookie do Google. Ao carregar o mapa, o Google (Google Ireland Ltd / Google LLC) pode instalar cookies e tratar dados — incluindo o seu endereço IP — nos termos da <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidade do Google</a>. Pode retirar o consentimento a qualquer momento com o botão «Deixar de carregar o mapa», junto ao mapa: o mapa é removido na hora e a escolha é apagada do seu navegador.</p>
 
         <h2 data-i18n="ck.s4h">4. Ligações para sítios externos</h2>
         <p data-i18n="ck.s4p">Quando clica em ligações para o WhatsApp, Facebook, Instagram, Google Maps ou para o Livro de Reclamações, é encaminhado para serviços de terceiros que têm as suas próprias políticas de cookies e de privacidade, pelas quais a HN Transportes não é responsável.</p>
 
-        <h2 data-i18n="ck.s5h">5. Como gerir o seu consentimento e os cookies</h2>
-        <p data-i18n="ck.s5p">Pode aceitar ou rejeitar os cookies não essenciais no banner apresentado na primeira visita e alterar essa escolha quando quiser através de «Definições de cookies», no rodapé do site. Pode também, a qualquer momento, configurar o seu navegador (Chrome, Safari, Firefox, Edge, etc.) para bloquear ou eliminar cookies.</p>
+        <h2 id="definicoes" data-i18n="ck.s5h">5. Como gerir o seu consentimento e os cookies</h2>
+        <p data-i18n="ck.s5p">Não há aviso de cookies porque nada é gravado no seu aparelho antes de uma escolha sua. Para retirar a autorização do mapa, use o botão «Deixar de carregar o mapa», junto ao mapa, na secção de contactos. A língua pode ser mudada a qualquer momento nos botões PT, ES ou EN. Pode também, a qualquer momento, configurar o seu navegador (Chrome, Safari, Firefox, Edge, etc.) para bloquear ou eliminar cookies e dados de sítios.</p>
 
         <h2 data-i18n="ck.s6h">6. Alterações</h2>
         <p data-i18n="ck.s6p">Esta política pode ser atualizada sempre que necessário. A versão em vigor é a publicada nesta página, identificada pela data de última atualização indicada acima.</p>
@@ -115,11 +124,13 @@
     <div class="container">
       <div class="footer__bottom">
         <nav class="footer__links" aria-label="Ligações legais">
-          <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a>
+          <!-- legal-comum:livro v1.0.0 -->
+          <a class="lr-botao" href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener" lang="pt"><svg class="lr-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="currentColor"><path fill-rule="evenodd" d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm1 0v20h1.2V2H7Zm3.8 5.2h5.4a.8.8 0 0 1 0 1.6h-5.4a.8.8 0 0 1 0-1.6Zm0 4h5.4a.8.8 0 0 1 0 1.6h-5.4a.8.8 0 0 1 0-1.6Zm0 4h3.4a.8.8 0 0 1 0 1.6h-3.4a.8.8 0 0 1 0-1.6Z"/></svg><span class="lr-botao__texto">Livro de Reclamações</span><span class="lr-sr" data-i18n="livro.sr"> (abre numa nova janela)</span></a>
+          <!-- /legal-comum:livro -->
           <a href="privacidade.html" data-i18n="footer.priv">Política de Privacidade</a>
           <a href="cookies.html" data-i18n="footer.cookies">Política de Cookies</a>
           <a href="termos.html" data-i18n="footer.termos">Termos e Aviso Legal</a>
-          <button type="button" class="cookie-settings" id="cookie-settings" data-i18n="footer.cookieset">Definições de cookies</button>
+          <a href="cookies.html#definicoes" data-i18n="footer.cookieset">Definições de cookies</a>
         </nav>
         <hr class="footer__rule" />
         <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
@@ -127,16 +138,8 @@
     </div>
   </footer>
 
-  <!-- Banner de consentimento de cookies (RGPD / Lei 41/2004) -->
-  <div class="cookiebar" id="cookiebar" role="region" aria-label="Consentimento de cookies" hidden>
-    <p class="cookiebar__txt" data-i18n="cookie.txt">Utilizamos cookies do <strong>Google Maps</strong> apenas para mostrar o mapa da nossa localização. Pode aceitar ou rejeitar — o site funciona na mesma. Saiba mais na <a href="cookies.html">Política de Cookies</a>.</p>
-    <div class="cookiebar__actions">
-      <button type="button" class="btn btn--outline-light" id="cookie-reject" data-i18n="cookie.reject">Rejeitar</button>
-      <button type="button" class="btn btn--accent" id="cookie-accept" data-i18n="cookie.accept">Aceitar</button>
-    </div>
-  </div>
 
-  <script src="assets/js/i18n.js?v=1" defer></script>
-  <script src="assets/js/main.js?v=6" defer></script>
+  <script src="assets/js/i18n.js?v=2" defer></script>
+  <script src="assets/js/main.js?v=7" defer></script>
 </body>
 </html>

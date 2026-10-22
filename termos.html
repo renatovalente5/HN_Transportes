@@ -28,7 +28,22 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png" />
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=28" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=29" />
+  <!-- legal-comum:livro-css v1.0.0 -->
+  <style>
+  .lr-botao{display:inline-flex;align-items:center;gap:.5em;min-height:44px;min-width:44px;padding:.5em 1em;border:1px solid transparent;border-radius:.5em;background:#af272f;color:#ffffff;font-family:inherit;font-size:max(14px,.95rem);font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;cursor:pointer}
+  .lr-botao:hover,.lr-botao:focus-visible{text-decoration:underline;text-underline-offset:.15em}
+  .lr-botao:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+  .lr-botao svg{width:1.5em;height:1.5em;flex:none}
+  .lr-botao--vermelho{background:#af272f;color:#ffffff;border-color:transparent}
+  .lr-botao--azul{background:#005a9c;color:#ffffff;border-color:transparent}
+  .lr-botao--preto{background:#111111;color:#ffffff;border-color:transparent}
+  .lr-botao--branco{background:#ffffff;color:#111111;border-color:#111111}
+  .lr-texto{font-weight:700;color:inherit;text-decoration:underline;text-underline-offset:.15em}
+  .lr-texto svg{width:1.2em;height:1.2em;vertical-align:-.2em;margin-right:.3em}
+  .lr-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  </style>
+  <!-- /legal-comum:livro-css -->
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="a11y.skip">Saltar para o conteúdo</a>
@@ -74,7 +89,7 @@
 
     <div class="container">
       <article class="prose">
-        <p class="updated" data-i18n="tm.updated">Última atualização: 23 de junho de 2026</p>
+        <p class="updated" data-i18n="tm.updated">Última atualização: 22 de outubro de 2026</p>
         <p class="legal-note" data-i18n="legal.prevail">Em caso de divergência entre versões, prevalece a versão em português.</p>
 
         <h2 data-i18n="tm.s1h">1. Identificação</h2>
@@ -98,21 +113,37 @@
         <p data-i18n="tm.s3p">O logótipo «HN Transportes», os textos, as imagens da frota e os demais conteúdos deste sítio são propriedade da Hélder Nunes - Transportes, Unipessoal, Lda ou são utilizados com autorização, estando protegidos pela legislação aplicável. Não é permitida a sua reprodução, distribuição ou utilização sem autorização prévia e por escrito.</p>
 
         <h2 data-i18n="tm.s4h">4. Limitação de responsabilidade</h2>
-        <p data-i18n="tm.s4p">Procuramos manter a informação deste sítio atualizada e correta. Contudo, a HN Transportes não se responsabiliza por eventuais imprecisões ou pela indisponibilidade temporária do sítio. As condições concretas de cada serviço (prazos, preços e demais termos) prevalecem sobre quaisquer indicações genéricas aqui apresentadas.</p>
+        <p data-i18n="tm.s4p">Procuramos manter a informação deste sítio atualizada e correta. Contudo, na medida permitida por lei, a HN Transportes não se responsabiliza por eventuais imprecisões ou pela indisponibilidade temporária do sítio. As condições concretas de cada serviço (prazos, preços e demais termos) prevalecem sobre quaisquer indicações genéricas aqui apresentadas.</p>
 
         <h2 data-i18n="tm.s5h">5. Ligações para sítios de terceiros</h2>
         <p data-i18n="tm.s5p">Este sítio contém ligações para plataformas de terceiros (WhatsApp, Facebook, Instagram, Google Maps e Livro de Reclamações). A HN Transportes não controla nem é responsável pelo conteúdo ou pelas políticas desses sítios.</p>
 
         <h2 data-i18n="tm.s6h">6. Livro de Reclamações</h2>
-        <p data-i18n="tm.s6p1">A HN Transportes dispõe de Livro de Reclamações. Pode apresentar uma reclamação através da plataforma digital em <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">www.livroreclamacoes.pt</a>.</p>
+        <p data-i18n="tm.s6p1">A HN Transportes dispõe de Livro de Reclamações. Pode apresentar uma reclamação através da plataforma digital em <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener">www.livroreclamacoes.pt</a>.</p>
         <p data-i18n="tm.s6p2">Entidade competente para apreciar reclamações no setor dos transportes: <strong>AMT — Autoridade da Mobilidade e dos Transportes</strong>, Av. António Augusto de Aguiar, n.º 128, 1050-020 Lisboa — <a href="mailto:reclamacoes@amt-autoridade.pt">reclamacoes@amt-autoridade.pt</a>.</p>
 
         <h2 data-i18n="tm.s7h">7. Resolução alternativa de litígios de consumo</h2>
-        <p data-i18n="tm.s7p">Em caso de litígio de consumo, o consumidor pode recorrer à entidade de Resolução Alternativa de Litígios (RAL) territorialmente competente:</p>
-        <ul data-i18n="tm.s7list">
-          <li><strong>CICAP — Tribunal Arbitral do Consumo</strong> (Centro de Informação de Consumo e Arbitragem do Porto) — <a href="https://www.cicap.pt" target="_blank" rel="noopener">www.cicap.pt</a></li>
+        <div data-i18n="tm.s7ral">
+        <!-- legal-comum:ral v1.0.0 -->
+        <div class="ral" lang="pt">
+        <p>Em caso de litígio de consumo, o consumidor pode recorrer a uma entidade de resolução alternativa de litígios de consumo. O centro competente é o do domicílio do consumidor ou do local da contratação; nos litígios de valor até 5 000 €, a arbitragem ou a mediação é obrigatória para o fornecedor se o consumidor a escolher (Lei n.º 24/96, art. 14.º, n.º 2; Lei n.º 144/2015, art. 18.º).</p>
+        <ul class="ral__lista">
+        <li><strong>CICAP</strong> — Centro de Informação de Consumo e Arbitragem do Porto (Área Metropolitana do Porto): <a href="https://cicap.pt/" target="_blank" rel="noopener">cicap.pt</a></li>
+        <li><strong>CACCL</strong> — Centro de Arbitragem de Conflitos de Consumo de Lisboa (Área Metropolitana de Lisboa): <a href="https://www.centroarbitragemlisboa.pt/" target="_blank" rel="noopener">centroarbitragemlisboa.pt</a></li>
+        <li><strong>CIAB</strong> — Centro de Informação, Mediação e Arbitragem de Consumo (Tribunal Arbitral de Consumo) (Distritos de Braga e Viana do Castelo e Alto Tâmega e Barroso): <a href="https://ciab.pt/" target="_blank" rel="noopener">ciab.pt</a></li>
+        <li><strong>TRIAVE</strong> — Centro de Arbitragem de Conflitos de Consumo do Ave, Tâmega e Sousa (Vale do Ave, Tâmega e Sousa): <a href="https://www.triave.pt/" target="_blank" rel="noopener">triave.pt</a></li>
+        <li><strong>CACRC</strong> — Centro de Arbitragem de Conflitos de Consumo da Região de Coimbra (Distrito de Coimbra): <a href="https://cacrc.pt/" target="_blank" rel="noopener">cacrc.pt</a></li>
+        <li><strong>CIMAAL</strong> — Centro de Informação, Mediação e Arbitragem do Algarve (Algarve): <a href="https://consumoalgarve.pt/" target="_blank" rel="noopener">consumoalgarve.pt</a></li>
+        <li><strong>CACC RAM</strong> — Centro de Arbitragem de Conflitos de Consumo da Região Autónoma da Madeira (Região Autónoma da Madeira): <a href="https://www.madeira.gov.pt/cacc/" target="_blank" rel="noopener">madeira.gov.pt/cacc</a></li>
+        <li><strong>CIMARA</strong> — Centro de Informação, Mediação e Arbitragem de Consumo da Região Açores (Região Autónoma dos Açores): <a href="https://ocimara.pt/" target="_blank" rel="noopener">ocimara.pt</a></li>
+        <li><strong>CAUAL</strong> — Centro de Arbitragem da Universidade Autónoma de Lisboa (Lisboa (Universidade Autónoma)): <a href="https://arbitragem.grupoautonoma.pt/" target="_blank" rel="noopener">arbitragem.grupoautonoma.pt</a></li>
+        <li><strong>CNIACC</strong> — Centro Nacional de Informação e Arbitragem de Conflitos de Consumo (para quem resida fora das áreas dos outros centros): <a href="https://www.cniacc.pt/" target="_blank" rel="noopener">cniacc.pt</a></li>
         </ul>
-        <p data-i18n="tm.s7p2">Mais informação sobre os direitos do consumidor em <a href="https://www.consumidor.gov.pt" target="_blank" rel="noopener">www.consumidor.gov.pt</a>.</p>
+        <p>A lista actualizada das entidades está no <a href="https://www.consumidor.gov.pt/resolucaoalternativalitigiosdeconsumo/centros-de-arbitragem2/encontrar-a-entidade-competente/lista-de-contactos" target="_blank" rel="noopener">Portal do Consumidor</a>.</p>
+        <p>Se vive noutro país da União Europeia, o Centro Europeu do Consumidor do seu país ajuda gratuitamente nos litígios com empresas de outros países: <a href="https://commission.europa.eu/live-work-travel-eu/consumer-rights-and-complaints/resolve-your-consumer-complaint/european-consumer-centres-network-ecc-net_pt" target="_blank" rel="noopener">Rede de Centros Europeus do Consumidor</a>.</p>
+        </div>
+        <!-- /legal-comum:ral -->
+        </div>
 
         <h2 data-i18n="tm.s8h">8. Lei aplicável e foro</h2>
         <p data-i18n="tm.s8p">Os presentes termos regem-se pela lei portuguesa. Para a resolução de qualquer litígio emergente da utilização deste sítio é competente o foro da comarca da sede da empresa, sem prejuízo das regras imperativas aplicáveis aos consumidores.</p>
@@ -126,11 +157,13 @@
     <div class="container">
       <div class="footer__bottom">
         <nav class="footer__links" aria-label="Ligações legais">
-          <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a>
+          <!-- legal-comum:livro v1.0.0 -->
+          <a class="lr-botao" href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener" lang="pt"><svg class="lr-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="currentColor"><path fill-rule="evenodd" d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm1 0v20h1.2V2H7Zm3.8 5.2h5.4a.8.8 0 0 1 0 1.6h-5.4a.8.8 0 0 1 0-1.6Zm0 4h5.4a.8.8 0 0 1 0 1.6h-5.4a.8.8 0 0 1 0-1.6Zm0 4h3.4a.8.8 0 0 1 0 1.6h-3.4a.8.8 0 0 1 0-1.6Z"/></svg><span class="lr-botao__texto">Livro de Reclamações</span><span class="lr-sr" data-i18n="livro.sr"> (abre numa nova janela)</span></a>
+          <!-- /legal-comum:livro -->
           <a href="privacidade.html" data-i18n="footer.priv">Política de Privacidade</a>
           <a href="cookies.html" data-i18n="footer.cookies">Política de Cookies</a>
           <a href="termos.html" data-i18n="footer.termos">Termos e Aviso Legal</a>
-          <button type="button" class="cookie-settings" id="cookie-settings" data-i18n="footer.cookieset">Definições de cookies</button>
+          <a href="cookies.html#definicoes" data-i18n="footer.cookieset">Definições de cookies</a>
         </nav>
         <hr class="footer__rule" />
         <span class="copy">© <span id="year">2026</span> Hélder Nunes - Transportes, Unipessoal, Lda · NIPC 516490141 · <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
@@ -138,16 +171,8 @@
     </div>
   </footer>
 
-  <!-- Banner de consentimento de cookies (RGPD / Lei 41/2004) -->
-  <div class="cookiebar" id="cookiebar" role="region" aria-label="Consentimento de cookies" hidden>
-    <p class="cookiebar__txt" data-i18n="cookie.txt">Utilizamos cookies do <strong>Google Maps</strong> apenas para mostrar o mapa da nossa localização. Pode aceitar ou rejeitar — o site funciona na mesma. Saiba mais na <a href="cookies.html">Política de Cookies</a>.</p>
-    <div class="cookiebar__actions">
-      <button type="button" class="btn btn--outline-light" id="cookie-reject" data-i18n="cookie.reject">Rejeitar</button>
-      <button type="button" class="btn btn--accent" id="cookie-accept" data-i18n="cookie.accept">Aceitar</button>
-    </div>
-  </div>
 
-  <script src="assets/js/i18n.js?v=1" defer></script>
-  <script src="assets/js/main.js?v=6" defer></script>
+  <script src="assets/js/i18n.js?v=2" defer></script>
+  <script src="assets/js/main.js?v=7" defer></script>
 </body>
 </html>

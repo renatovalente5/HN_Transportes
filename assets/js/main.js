@@ -1,4 +1,4 @@
-/* HN Transportes — interações do site. Sem dependências de build; carrega o Google Maps apenas após consentimento de cookies. */
+/* HN Transportes — interações do site. Sem dependências de build; o Google Maps só carrega depois do clique em «Carregar o mapa» (fachada, sem aviso de cookies). */
 (function () {
   "use strict";
   var body = document.body;
@@ -167,40 +167,41 @@
     });
   }
 
-  /* ---------- Consentimento de cookies + mapa Google ---------- */
-  var CK = "hn-cookie-consent";
-  var bar = document.getElementById("cookiebar");
+  /* ---------- Mapa da Google atrás de uma fachada (sem aviso de cookies) ----------
+     Nada da Google carrega até ao clique em «Carregar o mapa». A escolha só é gravada
+     nesse clique (hn-mapa-autorizado = "sim"), e «Deixar de carregar o mapa» apaga-a e
+     tira o mapa na hora (RGPD, art. 7.º, n.º 3). A mesma regra da fachada da legal-comum. */
+  var MK = "hn-mapa-autorizado";
   var mapBox = document.getElementById("map-embed");
+  var mapPh = document.getElementById("map-placeholder");
+  var mapOff = document.getElementById("map-retirar");
+  var mapOn = document.getElementById("map-accept");
+  function lerMapa() { try { return localStorage.getItem(MK); } catch (e) { return null; } }
+  function gravarMapa() { try { localStorage.setItem(MK, "sim"); } catch (e) {} }
+  function apagarMapa() { try { localStorage.removeItem(MK); } catch (e) {} }
 
   function loadMap() {
     if (!mapBox || mapBox.querySelector("iframe")) return;
     var url = mapBox.getAttribute("data-maps");
     if (!url) return;
-    var ph = document.getElementById("map-placeholder");
     var ifr = document.createElement("iframe");
     ifr.src = url;
     ifr.title = "Mapa da localização da HN Transportes (Google Maps)";
     ifr.loading = "lazy";
     ifr.allowFullscreen = true;
     ifr.referrerPolicy = "no-referrer-when-downgrade";
-    if (ph) ph.remove();
-    mapBox.appendChild(ifr);
+    if (mapPh) mapPh.hidden = true;
+    mapBox.insertBefore(ifr, mapOff || null);
+    if (mapOff) mapOff.hidden = false;
   }
-  function setConsent(v) { try { localStorage.setItem(CK, v); } catch (e) {} }
-  function getConsent() { try { return localStorage.getItem(CK); } catch (e) { return null; } }
-  function acceptCookies() { setConsent("accepted"); if (bar) bar.hidden = true; loadMap(); }
-  function rejectCookies() { setConsent("rejected"); if (bar) bar.hidden = true; }
+  function unloadMap() {
+    var ifr = mapBox ? mapBox.querySelector("iframe") : null;
+    if (ifr) ifr.remove();
+    if (mapPh) mapPh.hidden = false;
+    if (mapOff) mapOff.hidden = true;
+  }
 
-  var consent = getConsent();
-  if (consent === "accepted") loadMap();
-  else if (consent !== "rejected" && bar) bar.hidden = false;
-
-  var elAccept = document.getElementById("cookie-accept");
-  var elReject = document.getElementById("cookie-reject");
-  var elMapAccept = document.getElementById("map-accept");
-  var elSettings = document.getElementById("cookie-settings");
-  if (elAccept) elAccept.addEventListener("click", acceptCookies);
-  if (elReject) elReject.addEventListener("click", rejectCookies);
-  if (elMapAccept) elMapAccept.addEventListener("click", acceptCookies);
-  if (elSettings) elSettings.addEventListener("click", function (e) { e.preventDefault(); if (bar) bar.hidden = false; });
+  if (lerMapa() === "sim") loadMap();
+  if (mapOn) mapOn.addEventListener("click", function () { gravarMapa(); loadMap(); });
+  if (mapOff) mapOff.addEventListener("click", function () { apagarMapa(); unloadMap(); if (mapOn) mapOn.focus(); });
 })();
