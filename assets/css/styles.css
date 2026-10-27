@@ -452,8 +452,6 @@ a.ccard__val:hover { color: var(--accent-text); }
 }
 
 /* ---------- Grupo 1 da auditoria legal (out 2026) ---------- */
-/* Livro de Reclamações (legal-comum, discreto): com a letra, a cor e o separador das outras ligações legais */
-.contact__livro { margin: clamp(20px, 3vw, 28px) 0 0; text-align: center; }
 /* Nota do custo da chamada junto ao botão «Ligar» (DL 59/2021, art. 3.º) */
 .hero__callnote { margin-top: 10px; font-size: .8rem; color: var(--muted); }
 /* Mapa atrás de uma fachada: «Deixar de carregar o mapa» por cima do mapa, só com o mapa carregado */
